@@ -16,4 +16,17 @@ li a{
 	display: block;
 	padding: 8px;
 	background-color: #f1ffe1
+	color: black;
+	text-align: center;
+
+}
+
+li a:hover:not(.active){
+	background-color: #f1ffe1;
+
+}
+
+.active{
+	background-color: #779e4f
+	color: white;
 }
