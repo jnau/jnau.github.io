@@ -3,6 +3,10 @@ p {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
+h1{
+	font-family: Georgia, serif;
+}
+
 ul{
 	list-style-type: none;
 	margin: 0;
