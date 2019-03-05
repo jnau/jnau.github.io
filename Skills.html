@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> My Skills </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+@font-face {
+    font-family: 'robotoregular';
+    src: url('Fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('Fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body {
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7c9c49;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+* {box-sizing: border-box}
+
+
+p{
+  color:#525252;
+  font-size:12px;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.side {
+  flex: 50%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 50%;
+  background-color: white;
+  padding: 20px;
+}
+
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+
+.header {
+padding: 25px;
+  text-align: center;
+ background-image: url('Images/EditedBigSur.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); 
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: white; 
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+}
+
+.header h2{
+	font-size: 24px;
+}
+
+
+.skillbar {
+position:relative;
+display:block;
+margin-bottom:15px;
+width:100%;
+background:#eee;
+height:35px;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+-webkit-transition:0.4s linear;
+-moz-transition:0.4s linear;
+-ms-transition:0.4s linear;
+-o-transition:0.4s linear;
+transition:0.4s linear;
+-webkit-transition-property:width, background-color;
+-moz-transition-property:width, background-color;
+-ms-transition-property:width, background-color;
+-o-transition-property:width, background-color;
+transition-property:width, background-color;
+}
+.skillbar-title {
+position:absolute;
+top:0;
+left:0;
+font-weight:bold;
+font-size:13px;
+color:#fff;
+background:#6adcfa;
+-webkit-border-top-left-radius:3px;
+-webkit-border-bottom-left-radius:4px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-bottomleft:3px;
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+display:block;
+background:rgba(0, 0, 0, 0.1);
+padding:0 20px;
+height:35px;
+line-height:35px;
+-webkit-border-top-left-radius:3px;
+-webkit-border-bottom-left-radius:3px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-bottomleft:3px;
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+height:35px;
+width:0px;
+background:#6adcfa;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+float: left;
+}
+
+.skill-bar-percent {
+position:absolute;
+right:10px;
+top:0;
+font-size:11px;
+height:35px;
+line-height:35px;
+color:#444;
+color:rgba(0, 0, 0, 0.4);
+}
+
+.skill-bar-detail-button {
+  float:right;
+
+}
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+</style>
+<script src="/Scripts/AnimateSkillBar.js"></script>
+<script src="/Scripts/Top.js"></script>
+
+</head>
+<body>
+
+<div class="navbar" style="max-width: 1080px; margin: auto;">
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About Me</a>
+  <a href="Experience.html">Experiences</a>
+  <a href="Skills.html">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Interests.html">Interests</a>
+  <a href="/Files/Jnau_CV.pdf" class="right" download>CV</a>
+</div>
+
+<div class="header" style="min-height: 350px; max-width: 1080px; margin: auto;"></div>
+<div style="max-width: 1080px; margin: auto;">
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<br>
+<h3>Programming & Scripting Languages</h3>
+<center>
+<div class="skillbar clearfix " data-percent="90%">
+	<div class="skillbar-title" style="background: #617939;">
+   <span>C/C++</span>
+  </div>
+	<div class="skillbar-bar" style="background: #617939;"></div>
+	<div class="skill-bar-percent">90%</div>
+</div> <!-- End Skill Bar -->
+
+
+<div class="skillbar clearfix " data-percent="80%">
+	<div class="skillbar-title" style="background: #7c9c49;"><span>Matlab/GNU Octave</span></div>
+	<div class="skillbar-bar" style="background: #7c9c49;"></div>
+	<div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="80%">
+	<div class="skillbar-title" style="background: #7c9c49;"><span>Bash</span></div>
+	<div class="skillbar-bar" style="background: #7c9c49;"></div>
+	<div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="75%">
+	<div class="skillbar-title" style="background: #96b663;"><span>Python</span></div>
+	<div class="skillbar-bar" style="background: #96b663;"></div>
+	<div class="skill-bar-percent">75%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="65%">
+	<div class="skillbar-title" style="background: #a2be74;"><span>R</span></div>
+	<div class="skillbar-bar" style="background: #a2be74;"></div>
+	<div class="skill-bar-percent">65%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+	<div class="skillbar-title" style="background: #adc686;"><span>HTML</span></div>
+	<div class="skillbar-bar" style="background: #adc686;"></div>
+	<div class="skill-bar-percent">60%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+	<div class="skillbar-title" style="background: #adc686;"><span>CSS</span></div>
+	<div class="skillbar-bar" style="background: #adc686;"></div>
+	<div class="skill-bar-percent">60%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="40%">
+	<div class="skillbar-title" style="background: #b9ce97;"><span>Perl</span></div>
+	<div class="skillbar-bar" style="background: #b9ce97;"></div>
+	<div class="skill-bar-percent">40%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="30%">
+	<div class="skillbar-title" style="background: #c5d6a8;"><span>JavaScript</span></div>
+	<div class="skillbar-bar" style="background: #c5d6a8;"></div>
+	<div class="skill-bar-percent">30%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="20%">
+	<div class="skillbar-title" style="background: #d0deba;"><span>Ruby on Rails</span></div>
+	<div class="skillbar-bar" style="background: #d0deba;"></div>
+	<div class="skill-bar-percent">20%</div>
+</div> <!-- End Skill Bar -->
+<script src="/Scripts/PopUp.js"></script>
+</center>
+
+<h4>Percentages based on confidence when programming, as well as how often the languages are used in the total number of projects. Based on the following formula, these percentages are calculated when given a new program: (Quantity of Projects/ Total Number of Projects) * (Scale of Comfort / 10) (on a scale of 1-10, how comfortable are you when you need to code in this language) * 100. For example, 90% of my programs are in C/C++, I am fairly confident I can code in this language so I would give it a comfort scale of 10. Therefore, 0.9 * 1 * 100 = 90%. </h4>
+
+<div class="row">
+
+  <div class="side">
+  	<h3>General</h3>
+  	<ul style="list-style-type:circle;">
+  		<li>Detailed oriented work efficiency</li>
+ 		<li>Ability to adapt to new, developing environments</li>
+  		<li>Able to work collaborately as a team member, as well as independently without supervision</li>
+  		<li>Apt analytical skills along with ability to synthesize practical decisions</li>
+	</ul>
+
+  </div>
+  <div class="main">
+  	<h3>Known Software & Environments</h3>
+  	<ul style="list-style-type:circle;">
+  		<li> MacOS, Windows OS, Linux</li>
+      <li> Github </li>
+  		<li> Gurobi Optimizer </li>
+  		<li> LaTex</li>
+      <li> Microsoft Office </li>
+      <li> Adobe Photoshop </li>
+	</ul>
+
+
+	</div>
+  </div>
+  <div style="padding:20px;">
+<h3>Type of Programming</h3>
+    <ul style="list-style-type:circle;">
+      <li>Structured Programming in all languages</li>
+    <li>Parallel Programming in <b>C/C++</b> using OpenMP</li>
+      <li> Data Structures and Algorithms in <b>Python & C/C++</b></li>
+      <li> Dynamic Programming in <b>C/C++ & Perl</b></li>
+  </ul>
+</div>
+</div>
+<!--<div class="footer">
+  Thanks to <a href="https://www.w3schools.com/">w3schools</a> for helpful tutorials on website making with HTML, CSS, and Javascript! Also, this <a href="http://w3lessons.info/2013/06/04/skill-bar-with-jquery-css3/">link</a> that shows you to make an animated skill bar with JQuery and CSS3. 
+</div>-->
+
+
+
+</body>
+</html>

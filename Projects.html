@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Projects </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/Top.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('Fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('Fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7c9c49;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.header {
+padding: 25px;
+  text-align: center;
+  
+ background-image: url('Images/WallpaperEdit.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); 
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: white; 
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+  background-color: black;
+  opacity: 0.25;
+}
+
+.header h2{
+  font-size: 24px;
+  background-color: black;
+  opacity: 0.25;
+}
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+/* This is the icon on the collapsible button*/
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content-collapse {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: scroll;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+</style>
+
+</head>
+<body>
+<div class="navbar" style="max-width: 1080px; margin: auto;">
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About Me</a>
+  <a href="Experience.html">Experiences</a>
+  <a href="Skills.html">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Interests.html">Interests</a>
+  <a href="/Files/Jnau_CV.pdf" class="right" download>CV</a>
+</div>
+
+<div class="header" style="min-height: 350px; max-width: 1080px; margin: auto;"></div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div style="max-width: 1080px; margin: auto">
+<div style="background-color: white; height: 50px"></div>
+  <div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('research')"> Research </button>
+  <button class="btn" onclick="filterSelection('class')"> Class </button>
+  <button class="btn" onclick="filterSelection('personal')"> Personal </button>
+  <button class="btn" onclick="filterSelection('C++')"> C++ </button>
+  <button class="btn" onclick="filterSelection('perl')"> Perl </button>
+  <button class="btn" onclick="filterSelection('Python')"> Python </button>
+  <button class="btn" onclick="filterSelection('Matlab')"> Matlab </button>
+  <button class="btn" onclick="filterSelection('scripting')"> Scripting/Other </button>
+  <button class="btn" onclick="filterSelection('bioinformatics')"> Bioinformatics </button>
+  <button class="btn" onclick="filterSelection('hardware')"> Hardware </button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column Python bioinformatics research">
+    <div class="content">
+    <img src="/Images/ENCODETest.png" alt="ENCODE Project" style="width:100%; max-height: 400px;">
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">As part of the ENCODE Data Coordination Center, this repository is where we maintain and update the ENCODEd database. As an associate data wrangler, I help to update/code review the schemas, tests, and front-end scripts.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find the repository on Github. Click <a href="https://github.com/ENCODE-DCC/encoded" target="blank">here</a> to be redirected. You can access the database here: <a href="https://www.encodeproject.org/"> ENCODE home page </a></p>
+      </div>
+    </div>
+  </div>
+    <div class="column scripting Python research">
+    <div class="content">
+    <img src="/Images/CheckfilesTest.png" alt="ENCODE Project" style="width:100%; max-height: 400px;">
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Automated validation scripts to help validate Files and Experiment objects on the ENCODE data portal. I help to maintain and manage these scripts to stay up to date for the newest submissions.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find the repository on Github. Click <a href="https://github.com/ENCODE-DCC/checkfiles" target="blank">here</a> to be redirected. </p>
+      </div>
+    </div>
+  </div>
+  <div class="column research C++ Matlab">
+    <div class="content">
+      <img src="/Images/APDynamics.jpg" alt="Action Potential Dynamics" style="width:100%; max-height: 400px;">
+      <button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Sudden cardiac death (SCD) is one of the major leading causes of deaths in the United States and is known to be caused by abnormalities of heart rhythm, or cardiac arrhythmias, such as ventricular fibrillation and tachycardia. Simulated a mathematical model of a rabbit ventricular myocyte and explored the effects of changes in ion channel conductances and investigated how these changes corresponded to the slope of a 0D simulation in relation to the phenomena of spiral wave break-up and reentry in 2D tissue. By studying the relationship between the two, we can theoretically predict how APD alternans appear, establish the severity of a cardiac arrhythmia without actual experimentation or patient contact, and decide where the best area to consider innovative treatments would be. 0D mathematical analysis and data visualization in <b>Matlab</b>. 2D tissue simulation in <b>C/C++</b>. </p>
+      </div>
+      <button class="collapsible">Related Links</button>
+      <div class="content-collapse" >
+        <p align="justify">You can find my source code and results on Github. Click <a href="https://github.com/jnau/Theoretical-Cardiology/tree/master/Action%20Potential%20Dynamics" target="blank">here</a> to be redirected. This project was presented at a conference. Click <a href="https://github.com/jnau/Theoretical-Cardiology/blob/master/Action%20Potential%20Dynamics/Results/AuJessica_Poster.pdf", target="blank">here</a> to view the presented poster.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column research C++ Matlab scripting">
+    <div class="content">
+    <img src="/Images/CaProjWebsiteImgNew.jpg" alt="Lights" style="width:100%;max-height: 400px;">
+ <button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Investigating intracellular calcium dynamics by modeling the Calcium Induced Calcium Release (CICR) process within cardiac myocytes using the stochastic fire-diffuse-fire model of calcium release units (CRUs). Focused on describing the behaviors of calcium ions using random walks for a subcellular microdomain known as the dyad, as well as structural and spatial implications of RyR size heterogenity. Mathematical modeling and stochastic implementation in <b>C/C++</b>. Structured programming in <b>C/C++</b> to simplify algorithm for readability and reuseability. Parallel programming in <b>C/C++</b> to improve efficiency while dealing with large amounts of data points. Data Analysis and visualization in Matlab/GNU Octave to quanitfy results and make accurate comparisons to proven experiemental results. <b>Bash</b> scripts to run code on Lab computer cluster</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+
+        <p align="justify">You can find my source code and results on Github. Click <a href="https://github.com/jnau/Theoretical-Cardiology/tree/master/Calcium%20Dynamics">here</a> to be redirected. This project was presented at a conference. Click <a href="https://github.com/jnau/Theoretical-Cardiology/blob/master/Calcium%20Dynamics/Results/BS-18-Au-CaModel.pdf", target="blank">here</a> to view the presented poster.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column research Python hardware ">
+    <div class="content">
+    <img src="/Images/DigitalFireflies.png" alt="Nature" style="width:100%; max-height: 400px;">
+ <button class="collapsible">Description</button>
+      <div class="content-collapse">
+<p align="justify"><b>Scripted in Python</b> Group project where we created digital fireflies using the Raspberry Pi 3, LEDs, and photosensors. We had them synchronize their frequencies as would live fireflies in the wild in a phenomenon known as entrainment. Modeled with the Fitzhugh-Nagumo system and Hodgkin-Huxley model as nonlinear oscillators to control the period of flashing.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code and results on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/tree/master/Python/Mechanical%20Fireflies" target="blank">here</a> to be redirected. For a demonstration, go to <a href="https://basicscience.ucdmc.ucdavis.edu/sato_lab/", target="blank">this site</a> and go to the Gallery Tab. </p>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="column Python scripting research">
+    <div class="content">
+      <img src="Images/BFACF.jpg" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"><b>Utilized Scripts in Python & R</b> Structure implies functionality. With emerging techniques such as chromatin conformation capture assays, we are able to make inferences regarding the structure of DNA. Further, the possibility of local knotting increases as a chain increases in length. By using the BFACF algorithm, we investigate how changes in different levels of confinement affect the transition probabilities of lower crossing topological knots through local reconnection moves. We investigate how changes in certain parameters affected inherent properties of self-avoiding polygons in 3D space. Use of <b>Python</b> for string processing and subsequent knot type identification. Use of <b>R</b> for statistical analysis and data management for visualizing transition probabilities within a Markov Chain</p>
+      </div>
+      <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">There is no available source code. However, here is a link to see my poster that was presented at a conference. Click <a href="https://github.com/jnau/jnau.github.io/blob/master/JessCarlos_BaMBAPoster.pdf" target="blank">here</a> to be redirected.</p>
+      </div>
+    </div>
+  </div>
+  <div class="column Python bioinformatics class">
+    <div class="content">
+    <img src="Images/LCS_ILP.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"> Utilized integer linear programming (ILP) in DNA sequence analysis, in comparison to dynamic programming methods. Used longest common subsequence (LCS) as a criteria for similarity between 2 or more DNA sequences. ILP formulations generated using <b>Python</b>, solved using Gurobi Optimizer.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code and results on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Python/LCS_problem.py" target="blank">here</a> to be redirected. </p>
+
+      </div>
+    </div>
+  </div>
+<!--
+<div class="column scripting bioinformatics class">
+    <div class="content">
+    <img src="Images/LCS_ILP.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"> Clustering Methods</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code and results on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Python/LCS_problem.py" target="blank">here</a> to be redirected. </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column scripting bioinformatics class">
+    <div class="content">
+    <img src="Images/LCS_ILP.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"> Gene differentiation</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code and results on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Python/LCS_problem.py" target="blank">here</a> to be redirected. </p>
+
+      </div>
+    </div>
+  </div>
+-->
+  <div class="column C++ class">
+    <div class="content">
+      <img src="Images/DSC++.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">These scripts were all written as part of lab assignments in a computer science course. The course title was <b>Data Abstraction and Structures </b>- where we were tasked with implementing different containers/data structures, and specific algorithms using those them. Containers/structures include: <i>doubly linked lists, stacks, queues, hash tables, binary trees, and graphs</i>. Algorithms include <i>searching, sorting, traversal, and Dijkstra's algorithm.</i></p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my scripts on my Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/tree/master/C/Data%20Structures-Algorithms" target="blank"><b>here</b></a> to be redirected. </p>
+      </div>
+    </div>
+  </div>
+  <div class="column python personal ">
+    <div class="content">
+    <img src="Images/DSP.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Binary Trees, Hash Tables, Linked Lists, Dictionaries in Python</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">No Links yet</p>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="column scripting personal">
+    <div class="content">
+    <img src="Images/JS.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p>Mainly scripts I used for my website. Most from w3school and other sources that are credited in the footers for associated pages. Edited to do what I need it to. </p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+                <p>You can find my scripts on my Github. Click <a href="https://github.com/jnau/jnau.github.io/tree/master/Scripts" target="blank"><b>here</b></a> to be redirected. </p>
+      </div>
+    </div>
+  </div>-->
+  <div class="column scripting personal">
+    <div class="content">
+    <img src="Images/Website.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">My website!</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+
+      <p align="justify">You can find my scripts on my Github. Click <a href="https://github.com/jnau/jnau.github.io" target="blank"><b>here</b></a> to be redirected. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column perl bioinformatics class">
+    <div class="content">
+    <img src="Images/LCS_DP.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Utillized dynamic programming in <b>Perl</b> to answer the Longest Common Subsequence problem in DNA sequence analysis. </p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+      <p align="justify">You can find my scripts on my Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Perl/LCS.pl" target="blank"><b>here</b></a> to be redirected. </p>
+      </div>
+    </div>
+  </div>
+    <div class="column perl bioinformatics class">
+    <div class="content">
+    <img src="Images/blast.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Utilized dynamic programming in <b>Perl</b> to recreate a small portion of a popular sequence alignment algorithm known as BLAST </p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my scripts on my Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Perl/ToyBLAST.pl" target="blank"><b>here</b></a> to be redirected. </p>
+      </div>
+    </div>
+  </div>
+    <div class="column perl bioinformatics class">
+    <div class="content">
+    <img src="Images/needleman.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Needleman-Wunsch Algorithm using dynamic programming in <b>Perl</b> in order to do DNA sequence analysis</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my scripts on my Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/tree/master/Perl" target="blank"><b>here</b></a> to be redirected. There are two versions- with Gaps, or no Gaps. </p>
+       
+      </div>
+    </div>
+  </div>
+  <div class="column Matlab">
+    <div class="content">
+    <img src="Images/molecular.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"> <b>Scripted in Matlab</b> In this project, we  implemented a molecular dynamic (MD) simulation of Argon atoms in two
+dimensions using Verlet's algorithm. </p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+      <p align="justify">You can find my source code on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Matlab-Octave/Numerical%20Analysis/MolecularDynamics.m" target="blank">here</a> to be redirected. Click <a href="Files/MolecularDynamicsProject.pdf" target="blank">here</a> for the full report. </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column Matlab">
+    <div class="content">
+    <img src="Images/runge.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Runge Kutta Method to solve ODEs</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+      <p align="justify">You can find my source code on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Matlab-Octave/Numerical%20Analysis/RungeKutta.m">here</a> to be redirected. </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column Matlab">
+    <div class="content">
+    <img src="Images/Finite.png" alt="Car" style="width:100%">
+
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify">Finite Elements Methods to solve PDEs</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+      <p align="justify">You can find my source code on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Matlab-Octave/Numerical%20Analysis/FiniteElement.m">here</a> to be redirected. </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column C++ class">
+    <div class="content">
+    <img src="Images/tetris.jpg" alt="Car" style="width:100%">
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"> <b>Scripted in C++</b> Final Project for Software Development and Object-Oriented Programming course, ECS 30 UC Davis. We were asked to implement a functioning program recreating the game, Tetris. Initializing a certain board size, we create tetrominos (https://en.wikipedia.org/wiki/Tetromino) as they are read. We have functions in order to add the tetromino, checks to see if it will fit on the board, and if it would overlap with any exisiting tetromino. That said, we also implemented rotate functions in order to rotate the tetrominos clockwise.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/tree/master/C/Games/Tetris">here</a> to be redirected. </p>
+      </div>
+    </div>
+  </div>
+    <div class="column Python class">
+    <div class="content">
+    <img src="/Images/hangmans.png" alt="Car" style="width:100%">
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"><b>Scripted in Python</b>. Final Project for Introduction to Programming, ECS 10 UC Davis. We were asked to implement a functioning program to recreate the game  Hangman.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code on Github. Click <a href="https://github.com/jnau/Jnau-Sample-Scripts/blob/master/Python/Other/Hangman.py">here</a> to be redirected.</p>
+      </div>
+    </div>
+  </div>
+   <!-- <div class="column C++ class">
+    <div class="content">
+    <img src="/w3images/people3.jpg" alt="Car" style="width:100%">
+      <h4>Connect 4</h4>
+<button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p>...</p>
+      </div>
+    </div>
+  </div>-->
+  <div class="column C++ class">
+    <div class="content">
+    <img src="/Images/minesweeper.png" alt="Car" style="width:100%">
+    <button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p align="justify"><b>Scripted in C</b> Final project for Programming and Problem solving course in collaboration with 3 other members, Winter 2015 UC Davis. We were asked to implement a functioning program to recreate the classic minesweeper game. Given a rectangular grid of tiles, we initialize and hide some mines under these tiles. The goal is to mark all the tiles containing mines and uncover all other tiles not containing any mines. Uncovering a tile containing a mine will cause you to lose the game. Uncovering a tile without a hidden mine, will tell you how many mines are hidden in its surrounding 8 tiles.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p align="justify">You can find my source code on Github.Click<a href="https://github.com/jnau/Jnau-Sample-Scripts/tree/master/C/Games/Minesweeper">here</a> to be redirected.</p>
+      </div>
+    </div>
+  </div>
+
+<!-- END GRID -->
+</div>
+
+<script src="/Scripts/Portfolio.js"></script>
+<script src="/Scripts/collapse.js"></script>
+  
+<div style="background-color: white; height: 50px;">
+  </div>
+<!--<div class="footer">
+  Thanks to <a href="https://www.w3schools.com/">w3schools</a> for helpful tutorials on website making with HTML, CSS, and Javascript like this project portfolio! Also, <b>NONE</b> of these fonts are mine, they are found on <a href="https://www.dafont.com/">dafont</a> and I do not own them.
+</div>-->
+</body>
+</html>

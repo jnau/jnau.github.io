@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> My Interests </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+@font-face {
+    font-family: 'robotoregular';
+    src: url('Fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('Fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto_condensedregular';
+    src: url('Fonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('Fonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('Fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('Fonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'oswald_regularregular';
+    src: url('Files/oswald-regular-webfont.woff2') format('woff2'),
+         url('Files/oswald-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header {
+  padding: 25px;
+  text-align: center;
+  /*background: #9cba6c;*/
+  background-image: url('Images/DSC_0399Edit.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); 
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: white; 
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+  
+}
+
+.header h2{
+  font-size: 30px;
+}
+
+.responsive {
+  width: auto;
+  height: auto;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7c9c49;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Filter!*/
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 4px;
+}
+
+/* Create 4 equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  display: none; /* Hide all elements by default */
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  border-radius: 25px;
+  width: 260px;
+  height: 300px;
+}
+
+.column video{
+  margin-top: 8px;
+  vertical-align: middle;
+  border-radius: 25px;
+  width: 260px;
+  height: 300px;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+.container {
+  position: relative;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 15px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 4px 4px 25px 25px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+</style>
+</head>
+
+<body>
+<div class="navbar" style="max-width: 1080px; margin: auto;">
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About Me</a>
+  <a href="Experience.html">Experiences</a>
+  <a href="Skills.html">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Interests.html">Interests</a>
+  <a href="/Files/Jnau_CV.pdf" class="right" download>CV</a>
+</div>
+
+<div class="header" style="min-height: 350px; max-width: 1080px; margin: auto;"></div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div style="background-color: white; height: 50px"></div>
+
+<div style="max-width: 1080px; margin: auto">
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('plant')"> Gardening</button>
+    <button class="btn" onclick="filterSelection('art')"> Arts & Crafts</button>
+    <button class="btn" onclick="filterSelection('travel')"> Travel</button>
+    <button class="btn" onclick="filterSelection('pet')"> Pets</button>
+    <button class="btn" onclick="filterSelection('other')"> Other</button>
+    <button class="btn" onclick="filterSelection('picture')"> Pictures</button>
+    <button class="btn" onclick="filterSelection('video')"> Videos</button>
+
+  </div>
+  <div style="background-color: white; height: 50px"></div>
+  <div class="row">
+    <div class="column art picture">
+        <div class="container">
+          <img src="InterestsImages/DojoSensei.jpeg" alt="Mouse Hunt Dojo Sensei" style="width:100%">
+          <div class="overlay">Sketch: Mouse hunt's Dojo-sensei</div>
+        </div>
+    </div>
+    <div class="column art picture">
+        <div class="container">
+          <img src="InterestsImages/Squirtle.JPG" alt="Pokemon Squirtle Crochet" style="width:100%">
+          <div class="overlay">Crochet: Squirtle</div>
+      </div>
+    </div>
+    <div class="column art picture">
+      <div class="container">
+        <img src="InterestsImages/BearBlanket.JPG" alt="Crochet Bear Baby Blanket" style="width:100%">
+        <div class="overlay">Crochet: Bear Baby Blanket</div>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/RaspberryFrostBlooms.jpg" alt="Raspberry Frost Iris" style="width:100%">
+        <div class="overlay">Plant: Tall Bearded Iris- Raspberry Frost </div>
+      </div>
+    </div>
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/SparkyPeek.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/Fuchsia.JPG" alt="Fuchsia" style="width:100%">
+        <div class="overlay">Plant: White & Pink Fuchsia </div>
+      </div>
+    </div>
+    <div class="column travel picture">
+      <div class="container">
+        <img src="InterestsImages/GumWall.jpg" alt="Oregon Travel Gum Wall" style="width:100%">
+        <div class="overlay">May 2018: Seattle, WA. Gum Wall </div>
+      </div>
+    </div>        
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/FishFry_1month.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+          <div class="overlay"> 1 month old fish fry </div>
+      </div>
+    </div>
+    <div class="column Other picture">
+      <div class="container">
+        <img src="InterestsImages/SakuraKeyboard.JPG" alt="Varmilo keyboard" style="width:100%">
+        <div class="overlay"> Varmilo Sakura full-sized mechanical keyboard </div>
+      </div>
+    </div>   
+    <div class="column pet picture">
+      <div class="container">
+        <img src="InterestsImages/SparkyBall.JPG" alt="Sparky with Ball" style="width:100%">
+        <div class="overlay"> Ball time with Sparky </div>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/BabySucculents.JPG" alt="2in succulents" style="width:100%">
+        <div class="overlay"> Spring 2018: First succulent arrangement </div>
+      </div>
+    </div>   
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/SparkyWalk.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      </div>
+    </div>
+    <div class="column other video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/PC.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+          <div class="overlay"> First custom built PC! </div>
+      </div>
+    </div>
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/OldGoldfishVideo.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+          <div class="overlay"> My two fancy goldfish: Tsuki & Yomi </div>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/Vegetables.JPG" alt="vegetables" style="width:100%">
+        <div class="overlay"> First attempt at growing vegetables.. </div>
+      </div>
+    </div>
+    <div class="column other picture">
+      <div class="container">
+        <img src="InterestsImages/WarriorsGame2019.JPG" alt="Warriors game" style="width:100%">
+        <div class="overlay"> Warriors vs. Nuggets 2019 season @ Oracle! </div>
+      </div>
+    </div>
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/FishFry_Day100.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+          <div class="overlay"> Fish fry all grown up</div>
+      </div>
+    </div>
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/OldGoldfishVideo_1.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+          <div class="overlay"> Fancy goldfish breeding season</div>
+      </div>
+    </div> 
+    <div class="column art picture">
+      <div class="container">
+        <img src="InterestsImages/CrochetUnicorn.JPG" alt="crochet unicorn" style="width:100%">
+        <div class="overlay"> Crochet: unicorn </div>
+      </div>
+    </div>
+    <div class="column art picture">
+      <div class="container">
+        <img src="InterestsImages/CrochetPony.JPG" alt="crochet pony" style="width:100%">
+        <div class="overlay"> Crochet: pony </div>
+      </div>
+    </div>
+    <div class="column art picture">
+      <div class="container">
+        <img src="InterestsImages/CrochetBunny.JPG" alt="crochet bunny" style="width:100%">
+        <div class="overlay"> Crochet: bunny </div>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/BBHellebore.JPG" alt="crochet bunny" style="width:100%">
+        <div class="overlay"> Helleborus, Blushing Bridesmaids </div>
+      </div>
+    </div>
+    <div class="column pet video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/SparkyPets.MP4" type="video/mp4">Your browser does not support the video tag.</video>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/RaspberryIce.jpg" alt="Succulent echeveria raspberry ice" style="width:100%">
+        <div class="overlay"> Echeveria Raspberry Ice </div>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/Lisianthus.JPG" alt="Lisianthus Echo Lavender" style="width:100%">
+        <div class="overlay"> July 2020. Grown from a seed. Lisianthus Echo Lavender </div>
+      </div>
+    </div>
+    <div class="column pet picture">
+      <div class="container">
+        <img src="InterestsImages/SparkyCute.JPG" alt="Sparky being cute" style="width:100%">
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/CaramelAngeloViola.JPG" alt="Caramel Angelo Violas" style="width:100%">
+        <div class="overlay"> Caramel Angelo Violas </div>
+      </div>
+    </div>
+    <div class="column plant picture">
+      <div class="container">
+        <img src="InterestsImages/CherryBlossom.JPG" alt="crochet bunny" style="width:100%">
+        <div class="overlay"> Echeveria Agavoides Cherry Blossom </div>
+      </div>
+    </div>
+    <div class="column travel video">
+      <div class="container">
+        <video width= "100%" controls muted loop><source src="InterestsImages/WAPark_Koi.m4v" type="video/mp4">Your browser does not support the video tag.</video>
+        <div class="overlay"> 2019 Washington Park, Japanese Garden </div>
+      </div>
+    </div>
+    <div class="column other picture">
+      <div class="container">
+        <img src="InterestsImages/Gym.jpg" alt="Going to the gym; Shoulders" style="width:100%">
+        <div class="overlay"> Shoulders </div>
+      </div>
+    </div>
+  <!-- END GRID -->
+</div>
+<script src="/Scripts/Portfolio.js"></script>
+</body>
+</html>

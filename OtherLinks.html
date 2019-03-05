@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Other Links </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header {
+padding: 25px;
+  text-align: center;
+ background-image: url('Images/OtherLinks.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); 
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: #333; 
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+}
+
+.header h2{
+  font-size: 24px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.NavContainer {
+  position: relative;
+  width: 100%;
+}
+
+.NavImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 500px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  background-size: 100%;
+  position: relative;
+  text-align: center;
+  color:white;
+}
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0, 0.4); 
+  font-weight: bold; 
+  border: 10px solid white; 
+  font-size: 50px; 
+  color: white; 
+  padding: 20px
+
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  max-height: 500px;
+  max-width: 500px;
+}
+
+.NavContainer:hover .centered {
+  opacity: 0;
+}
+
+.NavContainer:hover .NavImage {
+  opacity: 0.3;
+}
+
+.NavContainer:hover .middle {
+  opacity: 0.9;
+}
+
+.NavText {
+  background: #ffffff;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+</head>
+<body>
+	<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About Me</a>
+  <a href="Experience.html">Experiences</a>
+  <a href="Skills.html">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Interests.html">Interests</a>
+  <a href="OtherLinks.html" class="right">Other</a>
+</div>
+<div class="header" style="min-height: 350px;">
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="column">
+    <div class="NavContainer">
+  	<center>
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	<div class="centered">Resume</div>
+    	</div>
+  	</center>    
+  	<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    <div class="NavText" align="justify">For a quick overview of my skills, recent experience, and highlighted projects. </div>
+    <a href="/Files/Jnau_resume.pdf" download>Download</a>
+  </div>
+</div>
+  </div>
+  <div class="column">
+        <div class="NavContainer">
+  	<center>
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	<div class="centered">CV</div>
+    	</div>
+  	</center>    
+  	<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    <div class="NavText" align="justify">For a more detailed overview, which includes more about my coursework, publications, conferences, and projects.  </div>
+    <a href="/Files/Jnau_CV.pdf" download>Download</a>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

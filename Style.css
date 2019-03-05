@@ -1,0 +1,39 @@
+p {
+	color: black;
+	font-family: "Times New Roman", Times,serif;
+}
+
+h1{
+	font-family: Georgia, serif;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+li {
+	float: left;
+	border-right: 1px solid #bbb;
+}
+
+li a{
+	display: block;
+	padding: 8px;
+	background-color: #f1ffe1
+	color: black;
+	text-align: center;
+
+}
+
+li a:hover:not(.active){
+	background-color: #f1ffe1;
+
+}
+
+.active{
+	background-color: #779e4f
+	color: white;
+}

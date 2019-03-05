@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About Me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/Top.js"></script>
+<style>
+
+@font-face {
+    font-family: 'karmillaregular';
+    src: url('Files/karmilla-regular-webfont.woff2') format('woff2'),
+         url('Files/karmilla-regular-webfont.woff') format('woff'),
+         url('Files/Karmilla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto_condensedregular';
+    src: url('Fonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('Fonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto_condensedlight';
+    src: url('Fonts/robotocondensed-light-webfont.woff2') format('woff2'),
+         url('Fonts/robotocondensed-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('Fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('Fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7c9c49;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.centered{
+  position: absolute;
+ top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0, 0.4); 
+  font-weight: bold; 
+  border: 10px solid white; 
+  font-size: 30px; 
+  color: white; 
+padding: 20px;
+}
+
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.parallax-1 
+{
+  background-image: url('Images/1-Copy.jpg');
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 1080px;
+}
+
+.parallax-2 
+{
+  background-image: url('Images/EducationUpdated.png');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1080px;
+}
+
+.parallax-3 
+{
+  background-image: url('Images/CWKnowledge.png');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1080px;
+}
+
+.parallax-4 
+{
+  background-image: url('Images/personality.png');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1080px;
+}
+
+.parallax-5 {
+  /* The image used */
+  background-image: url('Images/Me&SparkyEdit.jpg');
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 1080px;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+</style>
+</head>
+
+<body>
+<div class="navbar"  style="max-width: 1080px; margin: auto;">
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About Me</a>
+  <a href="Experience.html">Experiences</a>
+  <a href="Skills.html">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Interests.html">Interests</a>
+  <a href="/Files/Jnau_CV.pdf" class="right" download>CV</a>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div class="parallax-1" style="max-width: 1080px; margin: auto;"></div>
+<div style=" font-family: 'roboto_condensedlight'; max-height: 500px; max-width: 1020px; background-color:white;font-size:24px; text-align: justify; padding: 30px; margin: 0 auto;">
+Hi there! My name is Jessica N. Au and I was born and raised in San Jose, California. As someone new to the new and improved world of HTML, CSS, and JavaScript, I made this website in order to personalize the way others could discover more about me and my work. This is still a work in progress- hence the title of my webpage, "<i>Jess in Progress</i>". I am slowly revising and adding more to my pages to make them more visually appealing and easy to navigate, so I hope you come back to visit periodically for new updates! 
+
+</div>
+<div class="parallax-2"></div>
+<!--<div style="height:50px;background-color:black;font-size:40px; color: white; font-weight: bold; text-align:center; padding:20px">
+  Education
+</div>-->
+<div style="font-family: 'roboto_condensedlight';max-height: 200px; max-width: 1020px; background-color:white;font-size:24px; text-align:justify; padding: 30px; margin: 0 auto;">
+  In regards to my education, I graduated with a <u>B.S in Mathematics and Scientific Computation</u>, with a biology emphasis from <i>University of California- Davis</i>. I have a great interest in genetics and genomics, which led me to pursue a minor in Bioinformatics and Quantitative Biology. 
+
+</div>
+<div class="parallax-3"></div>
+<!--<div style="height:50px;background-color:black;font-size:40px; color: white; font-weight: bold; text-align:center; padding:20px">
+  Coursework & Knowledge
+</div>-->
+<div style="font-family: 'roboto_condensedlight';max-height: 600px; max-width: 1020px; background-color:white;font-size:24px; text-align: justify; padding: 30px; margin: 0 auto">
+My coursework comprised of courses in computer science, statistics, biology, and mathematics. I have knowledge of object-oriented programming, data structures & algorithms, touched upon probability theory & general statistics, and a multitude of biology courses such as gene expression, biochemistry, & functional genomics. My mathematics courses were more geared towards numerical analysis and rigorous use of other mathematical tools to investigate different biological/physical systems. From my lab experience, I am knowledgeable in fields such as population ecology, electrophysiology, structural biology, and genetics. If you're interested in my coursework, please go to the "Other" tab in the navigation bar to download my CV.
+</div>
+<div class="parallax-4"></div>
+<!--<div style="height:50px;background-color:black;font-size:40px; color: white; font-weight: bold; text-align:center; padding:20px">
+  So who am I?
+</div>-->
+<div style="font-family: 'roboto_condensedlight';max-height: 700px; max-width: 1020px; background-color:white;font-size:24px; text-align: justify; padding: 30px; margin: 0 auto">
+I am, and will always, consider myself a student in terms of constantly trying to learn more and refining my current skills. I believe that one always has room for improvement and I strive to be the best version of myself every day. With that said, I do my utmost whenever the opportunity arises, so that there's no question about whether I could've done "better." I am also a believer in a healthy body being as just important as a healthy mind. This type of view has led me to find many hobbies and interests that I look forward to during my spare time. I'm an avid gardener and power-lifter. I am a proud owner of a forever curious, treat-tracking dog named Sparky and a fancy ranchu goldfish named Pudgy. I am also into various arts & crafts/diy projects which include water color painting, sketching, crocheting, and building electronics using my Raspberry Pi or Arduino. I've always been a geek and interested in computers, so I also custom built my own PC. Well, that's kind of it. I hope to be able to include more of the personal projects I have in mind here in the future, so stay tuned!
+</div>
+</div>
+<div class="parallax-5"></div>  
+<!--<div class="footer">
+  Thanks to <a href="https://www.w3schools.com/">w3schools</a> for helpful tutorials on website making with HTML, CSS, and Javascript! I used the Parallax Scrolling tutorial for this page. I do not own any fonts used on this page and for my personal use only, I found these on dafont and FontSquirrel. 
+</div>-->
+
+</body>
+</html>
