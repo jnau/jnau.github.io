@@ -1,6 +1,8 @@
 p {
-	color: blue;
+	color: black;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
+
 ul{
 	list-style-type: none;
 	margin: 0;
