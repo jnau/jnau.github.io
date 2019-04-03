@@ -1,33 +1,71 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Jess in Progress</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="Style.css">
-	</head>
-	<body>
-		<!-- Begin the Body -->
-		<center><h1> Hello <strong>World</strong> </h1></center>
-		<br>
-		<nav>
-			<ul>
-				<li> <a href="index.html">Home</a></li>
-				<li> <a href="AboutMe.html">About Me</a></li>
-				<li> <a href="Projects.html">Projects</a></li>
-			</ul>
+<html lang="en">
+<head>
+<title>Jess In Progress- About Me/title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
+/* Style the header */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
 
-		</nav>
-		<br>
-		<p>
-			Here's some sample text.
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
 
-		</p>
-		<br>
-		<center><h4>In the meantime...</h4></center>
-		<center><h5>Enjoy a picture of Sparky</h5></center>
-		<center><img src="/IMG_0601.JPG" alt="This is Sparky." width="200"></center>
-		<br>
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
 
-	</body>
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Jess in Progress</h1>
+  <p>An <b>Interative</b> website <i>created</i> by Me, to <i>showcase</i> Me</p>
+</div>
+
+<div class="navbar">
+  <a href="index.html">About Me</a>
+  <a href="#">Experiences</a>
+  <a href="#">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="#">Interests</a>
+  <a href="#" class="right">Other</a>
+</div>
+
+</body>
 </html>
