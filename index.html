@@ -120,6 +120,9 @@ float: right;
   transition: .5s ease;
   backface-visibility: hidden;
   background-size: 100%
+  position: relative;
+  text-align: center;
+  color:white;
 }
 
 .middle {
@@ -132,6 +135,7 @@ float: right;
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
+
 
 .NavContainer:hover .NavImage {
   opacity: 0.3;
@@ -174,6 +178,24 @@ float: right;
   padding: 10px;
   text-align: center;
   background: #ddd;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  border: 10px solid #f1f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
 }
 
 img {
