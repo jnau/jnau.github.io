@@ -119,10 +119,16 @@ float: right;
   height: 500px;
   transition: .5s ease;
   backface-visibility: hidden;
-  background-size: 100%
+  background-size: 100%;
   position: relative;
   text-align: center;
   color:white;
+}
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .middle {
@@ -180,23 +186,7 @@ float: right;
   background: #ddd;
 }
 
-/* Position text in the middle of the page/image */
-.bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  font-size: 80px;
-  border: 10px solid #f1f1f1;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-}
+
 
 img {
 	width: 100%;
@@ -260,9 +250,12 @@ img {
 </div>
 <br>
 <div class="NavContainer">
-  <center><img src="IMG_20180504_123807.jpg" alt="GumWall" class="NavImage" ></center>    
+  <center>
+    <img src="IMG_20180504_123807.jpg" alt="GumWall" class="NavImage" >
+    <div class="centered">Experiences</div>
+  </center>    
   <div class="middle">
-    <div class="NavText"><b>Experiences</b></div>
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
     <div class="NavText" align="justify">You can find more about my research & job experience here. Also, contains more details regarding my duties and role in my labs </div>
     <a href="AboutMe.html" class="NavText">Learn More</a>
   </div>
