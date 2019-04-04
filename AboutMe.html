@@ -49,6 +49,48 @@ body {
   background-color: #ddd;
   color: black;
 }
+
+.parallax-1 {
+  /* The image used */
+  background-image: url('1.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-2 {
+  /* The image used */
+  background-image: url('2.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax-1 {
+    background-attachment: scroll;
+  }
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax-2 {
+    background-attachment: scroll;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -67,6 +109,10 @@ body {
   <a href="#" class="right">Other</a>
 </div>
 
+<div class="parallax-1"></div>
+<div style="height:500px;background-color: white; font-size: 36px">
+<p>Greetings! My name is Jessica Au and welcome to my home page. </p>
+<p align="justify">I define myself as a computational mathematician who enjoys delving into the complexities of biological problems. Using my mathematical reasoning and computer programming, I specialize in simplifying biological questions in order to make them more tangible. </p>
 
 </body>
 </html>
