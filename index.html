@@ -129,6 +129,12 @@ float: right;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0, 0.4); 
+  font-weight: bold; 
+  border: 10px solid white; 
+  font-size: 50px; 
+  color: white; 
+  padding: 20px
 
 }
 
@@ -143,6 +149,9 @@ float: right;
   text-align: center;
 }
 
+NavImage:hover .centered {
+  opacity: 0.3;
+}
 
 .NavContainer:hover .NavImage {
   opacity: 0.3;
@@ -253,7 +262,7 @@ img {
 <div class="NavContainer">
   <center>
     <img src="IMG_20180504_123807.jpg" alt="GumWall" class="NavImage" >
-    <div class="centered" style="background-color: rgba(0,0,0, 0.4); font-weight: bold; border: 10px solid white; font-size: 50px; color: white; padding: 20px">Experiences</div>
+    <div class="centered">Experiences</div>
   </center>    
   <div class="middle">
    <!-- <div class="NavText"><b>Experiences</b></div> -->
