@@ -43,12 +43,20 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-background: #9cba6c;
-background-image: url('4.jpg');
+  background: #9cba6c;
+  background-image: url('4.jpg');
   background-position: center;
   background-size: cover;
-  opacity: 0.85;
-  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0, 0.4); 
+  font-weight: bold; 
+  border: 10px solid white; 
+  font-size: 50px; 
+  color: white; 
+  padding: 20px
 }
 
 /* Increase the font size of the h1 element */
@@ -150,7 +158,7 @@ float: right;
 }
 
 .NavImage:hover .centered {
-  opacity: 0.3;
+  opacity: 0;
 }
 
 .NavContainer:hover .NavImage {
@@ -182,12 +190,6 @@ float: right;
   padding: 20px;
 }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
 
 /* Footer */
 .footer {
