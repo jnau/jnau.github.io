@@ -117,7 +117,91 @@ body {
     flex-direction: column;
   }
 }
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+}
 
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.NavContainer {
+  position: relative;
+  width: 100%;
+}
+
+.NavImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 500px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  background-size: 100%;
+  position: relative;
+  text-align: center;
+  color:white;
+}
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0, 0.4); 
+  font-weight: bold; 
+  border: 10px solid white; 
+  font-size: 50px; 
+  color: white; 
+  padding: 20px
+
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.NavContainer:hover .centered {
+  opacity: 0;
+}
+
+.NavContainer:hover .NavImage {
+  opacity: 0.3;
+}
+
+.NavContainer:hover .middle {
+  opacity: 0.9;
+}
+
+.NavText {
+  background: #ffffff;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 45%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 55%;
+  background-color: white;
+  padding: 20px;
+}
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
   .navbar a {
@@ -144,7 +228,20 @@ body {
   <p>An <b>Interative</b> website <i>created</i> by Me, to <i>showcase</i> Me</p>
 </div>
 
-<div class="p_welcome">
-	<h2>Welcome to my webpage!</h2>
-	<p> Please scroll down to continue </p>
-</div>
+<div class="row">
+
+  <div class="side">
+    <!-- <div class="fakeimg" style="height:100%;">Image</div> */ -->
+    <img src="1.jpg" alt="Me&Flowers"> 
+
+  </div>
+
+  <div class="main">
+  	
+  	<div class="p_welcome">
+		<h2>Welcome to my webpage!</h2>
+		<p> Please scroll down to continue </p>
+	</div>
+  </div>
+
+
