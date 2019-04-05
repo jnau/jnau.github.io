@@ -62,13 +62,8 @@ body {
 }
 
 
-div.scroll1
-{
-width:100%;
-height:300px;
-overflow:scroll;
-float: right;
-}
+
+
 
 /* Style the top navigation bar */
 .navbar {
@@ -102,100 +97,11 @@ float: right;
   box-sizing: border-box;
 }
 
-/* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.NavContainer {
-  position: relative;
-  width: 100%;
-}
-
-.NavImage {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: 500px;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  background-size: 100%;
-  position: relative;
-  text-align: center;
-  color:white;
-}
-.centered{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0, 0.4); 
-  font-weight: bold; 
-  border: 10px solid white; 
-  font-size: 50px; 
-  color: white; 
-  padding: 20px
-
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.NavContainer:hover .centered {
-  opacity: 0;
-}
-
-.NavContainer:hover .NavImage {
-  opacity: 0.3;
-}
-
-.NavContainer:hover .middle {
-  opacity: 0.9;
-}
-
-.NavText {
-  background: #ffffff;
-  color: black;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 45%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-/* Main column */
-.main {   
-  flex: 55%;
-  background-color: white;
-  padding: 20px;
-}
-
-
-/* Footer */
-.footer {
-  padding: 10px;
-  text-align: center;
-  background: #ddd;
-}
-
-
-
-img {
-	width: 100%;
-	height: 300px;
+.p_welcome {
+	font-size: 35px;
+	color: black;
+	padding: 80px;
+	text-align: center;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -229,4 +135,9 @@ img {
 <div class="header">
   <h1>Jess in Progress</h1>
   <p>An <b>Interative</b> website <i>created</i> by Me, to <i>showcase</i> Me</p>
+</div>
+
+<div class="p_welcome">
+	Welcome to my webpage!
+	<p> Please scroll down to continue </p>
 </div>
