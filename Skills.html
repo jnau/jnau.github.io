@@ -5,6 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script>
+jQuery('.skillbar').each(function(){
+jQuery(this).find('.skillbar-bar').animate({
+width:jQuery(this).attr('data-percent')
+},6000);
+});
+</script>
+
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
