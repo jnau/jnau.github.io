@@ -18,29 +18,88 @@ body {
 
 * {box-sizing: border-box}
 
-.container {
-  width: 100%;
-  background-color: #ddd;
+body {
+  font-family: 'Ubuntu', sans-serif;
+  width:960px;
 }
 
-.skills {
-  text-align: right;
-  padding: 10px;
-  color: white;
+p{
+  color:#525252;
+  font-size:12px;
 }
 
-.html {width: 60%; background-color: #4CAF50;}
-.css {width: 60%; background-color: #2196F3;}
-.C {width: 90%; background-color: #f44336;}
-.Python {width: 75%; background-color: #808080;}
-.Ruby {width: 20%; background-color: #808080;}
-.R {width: 65%; background-color: #808080;}
-.Matlab {width: 80%; background-color: #808080;}
-.js {width: 25%; background-color: #808080;}
-.Bash {width: 80%; background-color: #808080;}
-.Perl {width: 40%; background-color: #808080;}
+.skillbar {
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+	width:100%;
+	background:#eee;
+	height:35px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
 
+.skillbar-title {
+	position:absolute;
+	top:0;
+	left:0;
+width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#6adcfa;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
 
+.skillbar-title span {
+	display:block;
+	background:rgba(0, 0, 0, 0.1);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+	height:35px;
+	width:0px;
+	background:#6adcfa;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.4);
+}
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -81,57 +140,51 @@ body {
   <a href="Interests.html">Interests</a>
   <a href="OtherLinks.html" class="right">Other</a>
 </div>
+
+<div class="skillbar clearfix " data-percent="85%">
+	<div class="skillbar-title" style="background: #d35400;"><span>C/C++</span></div>
+	<div class="skillbar-bar" style="background: #e67e22;"></div>
+	<div class="skill-bar-percent">90%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="80%">
+	<div class="skillbar-title" style="background: #2980b9;"><span>Matlab/GNU Octave</span></div>
+	<div class="skillbar-bar" style="background: #3498db;"></div>
+	<div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="80%">
+	<div class="skillbar-title" style="background: #2c3e50;"><span>Bash</span></div>
+	<div class="skillbar-bar" style="background: #2c3e50;"></div>
+	<div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="75%">
+	<div class="skillbar-title" style="background: #46465e;"><span>Python</span></div>
+	<div class="skillbar-bar" style="background: #5a68a5;"></div>
+	<div class="skill-bar-percent">75%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="65%">
+	<div class="skillbar-title" style="background: #333333;"><span>R</span></div>
+	<div class="skillbar-bar" style="background: #525252;"></div>
+	<div class="skill-bar-percent">65%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+	<div class="skillbar-title" style="background: #27ae60;"><span>HTML</span></div>
+	<div class="skillbar-bar" style="background: #2ecc71;"></div>
+	<div class="skill-bar-percent">60%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+	<div class="skillbar-title" style="background: #124e8c;"><span>CSS</span></div>
+	<div class="skillbar-bar" style="background: #4288d0;"></div>
+	<div class="skill-bar-percent">60%</div>
+</div> <!-- End Skill Bar -->
+
+<p><strong>SOURCE :</strong> http://w3lessons.info/2013/06/04/skill-bar-with-jquery-css3/</p>
 <h1>My Skills</h1>
-
-<p>C/C++</p>
-<div class="container">
-  <div class="skills C">90%</div>
-</div>
-
-<p>Matlab/GNU Octave</p>
-<div class="container">
-  <div class="skills Matlab">80%</div>
-</div>
-
-<p>Bash</p>
-<div class="container">
-  <div class="skills Bash">80%</div>
-</div>
-
-<p>Python</p>
-<div class="container">
-  <div class="skills Python">75%</div>
-</div>
-
-
-<div class="container">
-  <p>R</p><div class="skills R">65%</div>
-</div>
-
-<p>HTML</p>
-<div class="container">
-  <div class="skills html">60%</div>
-</div>
-
-<p>CSS</p>
-<div class="container">
-  <div class="skills css">60%</div>
-</div>
-
-<p>Perl</p>
-<div class="container">
-  <div class="skills Perl">40%</div>
-</div>
-
-<p>JavaScript</p>
-<div class="container">
-  <div class="skills js">25%</div>
-</div>
-
-<p>Ruby</p>
-<div class="container">
-  <div class="skills Ruby">20%</div>
-</div>
 
 </body>
 </html>
