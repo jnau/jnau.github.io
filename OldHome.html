@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> Welcome </title>
+<title> About Jess </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 1px;
   padding: 10px;
   height: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .responsive {
@@ -44,28 +41,34 @@ body {
 
 /* Style the header */
 .header {
-padding: 80px;
+  padding: 80px;
   text-align: center;
   background: #9cba6c;
  /* background-image: url('4.jpg');
   background-position: center;
   background-size: cover;
-  background-color: rgba(0,0,0, 0.4); */
-  border-right: 10px solid #333; 
-  border-left: 10px solid #333;
-  border-bottom: 10px solid #333;
+  background-color: rgba(0,0,0, 0.4); 
+  border: 10px solid white; */
   color: white; 
 }
 
 /* Increase the font size of the h1 element */
 .header h1 {
-  font-size: 70px;
+  font-size: 40px;
 }
 
 .header h2{
-	font-size: 35px;
+	font-size: 20px;
 }
 
+
+div.scroll1
+{
+width:100%;
+height:300px;
+overflow:scroll;
+float: right;
+}
 
 /* Style the top navigation bar */
 .navbar {
@@ -99,37 +102,10 @@ padding: 80px;
   box-sizing: border-box;
 }
 
-.p_welcome {
-	color: black;
-	padding: 80px;
-	text-align: center;
-}
-
-.p_welcome h2 {
-	font-size: 35px;
-	font-weight: bold;
-
-}
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-/* Ensure proper sizing */
-* {
-  box-sizing: border-box;
-}
-
 /* Column container */
 .row {  
   display: flex;
   flex-wrap: wrap;
-  padding-right: 200px;
-  padding-left: 200px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-
 }
 
 .NavContainer {
@@ -141,9 +117,7 @@ padding: 80px;
   opacity: 1;
   display: block;
   width: 100%;
-  max-width: 1200px;
-  height: 100%;
-  max-height: 500px;
+  height: 500px;
   transition: .5s ease;
   backface-visibility: hidden;
   background-size: 100%;
@@ -162,7 +136,6 @@ padding: 80px;
   font-size: 50px; 
   color: white; 
   padding: 20px
-
 }
 
 .middle {
@@ -174,8 +147,6 @@ padding: 80px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-  max-height: 500px;
-  max-width: 500px;
 }
 
 .NavContainer:hover .centered {
@@ -201,20 +172,38 @@ padding: 80px;
 .side {
   flex: 45%;
   background-color: #f1f1f1;
-padding: 10px;
+  padding: 20px;
 }
 
 /* Main column */
 .main {   
   flex: 55%;
   background-color: white;
-
+  padding: 20px;
 }
+
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+
 
 img {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 }
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
   .navbar a {
@@ -226,9 +215,14 @@ img {
 </style>
 </head>
 <body>
+
+<div class="header">
+  <h1>Jess in Progress</h1>
+  <p>An <b>Interative</b> website <i>created</i> by Me, to <i>showcase</i> Me</p>
+</div>
+
 <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="AboutMe.html">About Me</a>
+  <a href="index.html">About Me</a>
   <a href="Experience.html">Experiences</a>
   <a href="Skills.html">Skills</a>
   <a href="Projects.html">Projects</a>
@@ -236,29 +230,28 @@ img {
   <a href="OtherLinks.html" class="right">Other</a>
 </div>
 
-<div class="header">
-  <h1>Jess in Progress</h1>
-  <p>An <b>Interative</b> website <i>created</i> by Me, to <i>showcase</i> Me</p>
-</div>
-
 <div class="row">
 
   <div class="side">
     <!-- <div class="fakeimg" style="height:100%;">Image</div> */ -->
-    <center><img src="1.jpg" alt="Me&Flowers"> </center>
+    <img src="1.jpg" alt="Me&Flowers"> 
 
   </div>
 
   <div class="main">
-  	
-  	<div class="p_welcome">
-		<h2>Welcome to my webpage!</h2>
-		<p>My name is Jessica Au. Seeing as you are here, there must be something about me that you are interested in. The tabs in the navigation bar all lead to different aspects of my professional and personal life. Please continue below to see descriptions on what you might be looking for. Also as a side note, these images were taken by me or someone I know. Until I find images that relate to the topic at hand, please enjoy these pictures from my travels. </p>
-		<i><p>Last edit: 4/5/2019 </p></i>
+  	<div class="scroll1">
+  	<h2> About Me </h2>
+    <p>Greetings! My name is Jessica Au and welcome to my home page. </p>
+    <p align="justify">I define myself as a computational mathematician who enjoys delving into the complexities of biological problems. Using my mathematical reasoning and computer programming, I specialize in simplifying biological questions in order to make them more tangible. </p>
+    <p align="justify"> I received my <b>B.S</b> from <i>University of California- Davis</i> in 2017 in <u>Mathematics and Scientific Computation</u>, with an emphasis in Biology. I have a great interest in Genetics and Genomics, which led me to pursue a minor in Bioinformatics and Quantitative Biology</p>
+    <p align="justify">My coursework included computer science, statistics, and biology courses, along with my mathematics courses. To be more specific, I have knowledge of object oriented programming and data structures, touched on probability theory and general statistics, and a multitude of biology courses such as gene expression, biochemistry, functional genomics, and more. </p>
+    <p align="justify">Seeing as you are here, there must be something about me that you are interested in. The tabs in the navigation bar all lead to different aspects of my professional and personal life. Please continue below to see descriptions on what you might be looking for. Also as a side note, these images were taken by me or someone I know. Until I find images that relate to the topic at hand, please enjoy these pictures from my travels. </p>
+    <i> Thanks for stopping by!</i>
+    <i><h5>Last Edited, April 3, 2019</h5></i>
 	</div>
   </div>
-</div>
 
+</div>
 <br>
 <div class="NavContainer">
   <center>
@@ -303,10 +296,14 @@ img {
   <div class="centered">Other Links</div>
 </center>
   <div class="middle">
-    <div class="NavText"><b>Other Links</b></div>
     <div class="NavText" align="justify">Direct download links for my Resume/CV can be found here, as well as social media links: Github, LinkedIn. </div>
     <a href="OtherLinks.html" class="NavText">Click here to find my Resume/CV, Github Links </a>
   </div>
 </div>
-</body>
+<br>
+<div class="footer">
+  <h2>Footer</h2>
+</div>
 
+</body>
+</html>
