@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title> Other Links </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
@@ -112,15 +115,11 @@
 </style>
 </head>
 <body>
-
-<h2>Images Side by Side</h2>
-<p>How to create side-by-side images with the CSS float property:</p>
-
 <div class="row">
   <div class="column">
     <div class="NavContainer">
   	<center>
-    	<div style="background-color: #9cba6c; min-height: 300px; min-width: 300px">
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
     	<div class="centered">Resume</div>
     	</div>
   	</center>    
@@ -132,7 +131,17 @@
 </div>
   </div>
   <div class="column">
-    <img src="img_forest.jpg" alt="Forest" style="width:100%">
+        <div class="NavContainer">
+  	<center>
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	<div class="centered">CV</div>
+    	</div>
+  	</center>    
+  	<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    <div class="NavText" align="justify">For a more detailed overview. This includes my coursework, publications, & conferences,  </div>
+    <a href="AboutMe.html" class="NavText" target="_blank">Download</a>
+  </div>
   </div>
 </div>
 
