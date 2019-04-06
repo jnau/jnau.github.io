@@ -26,6 +26,34 @@ p{
   font-size:12px;
 }
 
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.side {
+  flex: 50%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 50%;
+  background-color: white;
+  padding: 20px;
+}
+
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+
 .header {
 padding: 80px;
   text-align: center;
@@ -215,6 +243,17 @@ width:110px;
 </div> <!-- End Skill Bar -->
 </center>
 <script src="/Scripts/AnimateSkillBar.js"></script>
+
+<div class="row">
+
+  <div class="side">
+  	<h3>General</h3>
+
+  </div>
+  <div class="main">
+  	<h3>Known Software & Data Suites</h3>
+	</div>
+  </div>
 
 
 <p><strong>SOURCE :</strong> http://w3lessons.info/2013/06/04/skill-bar-with-jquery-css3/</p>
