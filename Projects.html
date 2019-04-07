@@ -128,9 +128,17 @@ img {vertical-align: middle;}
 /* Ensure proper sizing */
 
 /* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
+.column {
+  float: left;
+  width: 33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .NavContainer {
@@ -197,20 +205,6 @@ img {vertical-align: middle;}
   font-size: 16px;
   padding: 16px 32px;
 }
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 45%;
-  background-color: #f1f1f1;
-  padding: 10px;
-}
-
-/* Main column */
-.main {   
-  flex: 55%;
-  background-color: white;
-
-}
 
 img {
 	width: 100%;
@@ -240,6 +234,36 @@ img {
 <h1>Projects</h1>
 <h2>Below are some descriptions of my major projects and a link to their source code, if available.</h2>
 </div>
+
+<div class="row">
+  <div class="column">
+    <div class="NavContainer">
+  	<center>
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	<div class="centered">Personal</div>
+    	</div>
+  	</center>    
+  	<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    <div class="NavText" align="justify">Under Construction</div>
+  </div>
+</div>
+  </div>
+  <div class="column">
+        <div class="NavContainer">
+  	<center>
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	<div class="centered">Research</div>
+    	</div>
+  	</center>    
+  	<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    <div class="NavText" align="justify"> These are any projects affiliated with any labs I am/was a part of.</div>
+    <a href="#Research">Click here to read more about my research projects</a>
+  </div>
+  </div>
+</div>
+
 
 <p>Here should be the links for smooth scrolling to the projects</p>
 <br>
