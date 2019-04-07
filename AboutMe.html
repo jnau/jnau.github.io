@@ -4,6 +4,8 @@
 <title>About Me</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/Top.js"></script>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +17,25 @@ body {
   height: 100%;
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7c9c49;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 
 .centered{
   position: absolute;
@@ -130,6 +151,7 @@ padding: 20px;
   <a href="Interests.html">Interests</a>
   <a href="OtherLinks.html" class="right">Other</a>
 </div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="parallax-1">
   <div class="centered">
     <center><h1> About Me </h1></center>
