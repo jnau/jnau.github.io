@@ -4,69 +4,23 @@
 <title> Projects </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/SmoothScroll.js"></script>
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
-  height: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
 
 .responsive {
   width: auto;
   height: 300px;
 }
 
-.parallax {
-  /* The image used */
-  background-image: url('img_parallax.jpg');
-
-  /* Full height */
-  height: 100%; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+#research {
+	height: 500px;
 }
 
-/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
+#classproj {
+	height: 500px;
 }
-
-/* Style the header */
-.header {
-padding: 25px;
-  text-align: center;
-  background: #9cba6c;
- /* background-image: url('4.jpg');
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0,0,0, 0.4); */
-  border-right: 10px solid #333; 
-  border-left: 10px solid #333;
-  border-bottom: 10px solid #333;
-  color: white; 
-}
-
-/* Increase the font size of the h1 element */
-.header h1 {
-  font-size: 60px;
-}
-
-.header h2{
-	font-size: 24px;
-}
-
 
 /* Style the top navigation bar */
 .navbar {
@@ -95,21 +49,43 @@ padding: 25px;
   color: black;
 }
 
-/* Ensure proper sizing */
-* {
-  box-sizing: border-box;
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-.p_welcome {
-	color: black;
-	padding: 80px;
-	text-align: center;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.p_welcome h2 {
-	font-size: 35px;
-	font-weight: bold;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
 }
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
@@ -118,9 +94,6 @@ padding: 25px;
   }
 }
 /* Ensure proper sizing */
-* {
-  box-sizing: border-box;
-}
 
 /* Column container */
 .row {  
@@ -235,6 +208,54 @@ img {
 <h1>Projects</h1>
 <h2>Below are some descriptions of my major projects and a link to their source code, if available.</h2>
 </div>
+
+<p>Here should be the links for smooth scrolling to the projects</p>
+<br>
+<div class="main", id="research">
+	<h3>Research</h3>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="img_nature_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="img_snow_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="img_mountains_wide.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<p>Slideshow 2:</p>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="img_band_chicago.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="img_band_la.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="img_band_ny.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+</div>
+
+<div class="main", id="classproj">
+	<h3>Class Projects</h3>
+	
+
+</div>
+
+
 	
 </body>
 </html>
