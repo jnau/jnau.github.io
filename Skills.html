@@ -18,6 +18,63 @@ body {
   margin-bottom: 50px;
 }
 
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
 #myBtn {
   display: none;
   position: fixed;
@@ -169,6 +226,11 @@ line-height:35px;
 color:#444;
 color:rgba(0, 0, 0, 0.4);
 }
+
+.skill-bar-detail-button {
+  float:right;
+
+}
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -200,6 +262,7 @@ color:rgba(0, 0, 0, 0.4);
 </style>
 <script src="/Scripts/AnimateSkillBar.js"></script>
 <script src="/Scripts/Top.js"></script>
+
 </head>
 <body>
 
@@ -222,10 +285,13 @@ color:rgba(0, 0, 0, 0.4);
 <h3>Programming & Scripting Languages</h3>
 <center>
 <div class="skillbar clearfix " data-percent="90%">
-	<div class="skillbar-title" style="background: #617939;"><span>C/C++</span></div>
+	<div class="skillbar-title" style="background: #617939;">
+   <span>C/C++</span>
+  </div>
 	<div class="skillbar-bar" style="background: #617939;"></div>
 	<div class="skill-bar-percent">90%</div>
 </div> <!-- End Skill Bar -->
+
 
 <div class="skillbar clearfix " data-percent="80%">
 	<div class="skillbar-title" style="background: #7c9c49;"><span>Matlab/GNU Octave</span></div>
@@ -280,7 +346,7 @@ color:rgba(0, 0, 0, 0.4);
 	<div class="skillbar-bar" style="background: #d0deba;"></div>
 	<div class="skill-bar-percent">20%</div>
 </div> <!-- End Skill Bar -->
-
+<script src="/Scripts/PopUp.js"></script>
 </center>
 
 <h4>Percentages based on confidence when programming, as well as how often the languages are used in the total number of projects. Based on the following formula, these percentages are calculated when given a new program: (Quantity of Projects/ Total Number of Projects) * (Scale of Comfort / 10) (on a scale of 1-10, how comfortable are you when you need to code in this language) * 100. For example, 90% of my programs are in C/C++, I am fairly confident I can code in this language so I would give it a comfort scale of 10. Therefore, 0.9 * 1 * 100 = 90%. </h4>
@@ -307,9 +373,18 @@ color:rgba(0, 0, 0, 0.4);
       <li> Microsoft Office</li>
        <li> Adobe Photoshop</li>
 	</ul>
+
+
 	</div>
   </div>
-
+  <div style="padding:20px;">
+<h3>Type of Programming</h3>
+    <ul style="list-style-type:circle;">
+      <li>Structured Programming in all languages</li>
+    <li>Parallel Programming in <b>C/C++</b> using OpenMP</li>
+      <li> Data Structures and Algorithms in <b>Python & C/C++</b></li>
+  </ul>
+</div>
 
 <p><strong>SOURCE :</strong> http://w3lessons.info/2013/06/04/skill-bar-with-jquery-css3/</p>
 
