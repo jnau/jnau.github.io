@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="Body&Headers.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<script src="/Scripts/Top.js"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -158,6 +158,42 @@ h1 {
   color: black;
 }
 
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content-collapse {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
 </style>
 
 </head>
@@ -175,7 +211,7 @@ h1 {
 <h1>Projects</h1>
 <h2>Below are some descriptions of my major projects and a link to their source code, if available.</h2>
 </div>
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('cardiology')"> Theoretical Cardiology </button>
@@ -193,8 +229,10 @@ h1 {
   <div class="column cardiology C++">
     <div class="content">
       <img src="/Images/APDynamics.jpg" alt="Mountains" style="width:100%">
-      <h4>Nonlinear Dynamics in relation to Action Potential Dynamics and Heart Disease</h4>
-      <p>Description</p>
+<button class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
     </div>
   </div>
 
@@ -261,6 +299,7 @@ h1 {
 </div>
 
 <script src="/Scripts/Portfolio.js"></script>
+<script src="/Scripts/collapse.js"></script>
   
 
 </body>
