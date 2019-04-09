@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Projects </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/SmoothScroll.js"></script>
+
+<script src="/Scripts/SlideShowInd.js"></script>
+<script src="/Scripts/Top.js"></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #7c9c49;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.header {
+padding: 25px;
+  text-align: center;
+  background: #9cba6c;
+ /* background-image: url('4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); */
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: white; 
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+}
+
+.header h2{
+	font-size: 24px;
+}
+
+.sectionhighlight{
+  color:white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 45px;
+  background-color: #9cba6c;
+  border: 10px solid #333;
+  padding: 25px;
+  height: 200px;
+}
+
+.sectionhighlight h3 {
+  font-size: 20px;
+
+}
+.responsive {
+  width: auto;
+  height: 300px;
+}
+
+#research {
+	height: 500px;
+}
+
+#classproj {
+	height: 500px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+/* Ensure proper sizing */
+
+/* Column container */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.NavContainer {
+  position: relative;
+  width: 100%;
+}
+
+.NavImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 500px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  background-size: 100%;
+  position: relative;
+  text-align: center;
+  color:white;
+}
+.centered{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0, 0.4); 
+  font-weight: bold; 
+  border: 10px solid white; 
+  font-size: 50px; 
+  color: white; 
+  padding: 20px
+
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  max-height: 500px;
+  max-width: 500px;
+}
+
+* {box-sizing: border-box}
+.mySlides1, .mySlides2, .mySlides3 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 750px;
+  max-height: 350px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+.NavContainer:hover .centered {
+  opacity: 0;
+}
+
+.NavContainer:hover .NavImage {
+  opacity: 0.3;
+}
+
+.NavContainer:hover .middle {
+  opacity: 0.9;
+}
+
+.NavText {
+  background: #ffffff;
+  color: black;
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+
+</style>
+</head>
+<body>
+		<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About Me</a>
+  <a href="Experience.html">Experiences</a>
+  <a href="Skills.html">Skills</a>
+  <a href="Projects.html">Projects</a>
+  <a href="Interests.html">Interests</a>
+  <a href="OtherLinks.html" class="right">Other</a>
+</div>
+<div class="header">
+<h1>Projects</h1>
+<h2>Below are some descriptions of my major projects and a link to their source code, if available.</h2>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div style="background-color:white; height: 250px"></div>
+<div class="row">
+  <div class="column">
+    <div class="NavContainer">
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	 <div class="centered">Personal</div>
+    	</div>
+  	<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    <div class="NavText" align="justify">Under Construction</div>
+  	</div>
+	</div>
+  </div>
+  <div class="column">
+    <div class="NavContainer">
+    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+    	<div class="centered">Research</div>
+    	</div>
+  		<div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+    	<div class="NavText" align="justify"> These projects pertain to either my Theoretical Cardiology lab or my Topological Molecular Biology Lab.</div>
+    	<a href="#Research">Click here to read more about my research projects</a>
+  		</div>
+  	</div>
+  </div>
+  <div class="column">
+  	<div class="NavContainer">
+      <div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
+		    <div class="centered">Class</div>
+      </div>
+        <div class="middle">
+   <!-- <div class="NavText"><b>Experiences</b></div> -->
+          <div class="NavText" align="justify"> These are any programs or projects I've written (some with a team or partner) for certain classes.</div>
+          <a href="#classproj">Click here to read more about my class projects</a>
+  		  </div>
+      </div>
+  </div>
+</div>
+
+<div style="background-color:white; height: 300px"></div>
+<div class="main sectionhighlight", id="Research">
+Research Projects
+<h3>Below are some noteable projects I worked on and presented either at a conference or lab meeting</h3>
+</div>
+<p>Slideshow 1:</p>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="Images/CaProjWebsiteImgNew.jpg">
+  </div>
+
+  <div class="mySlides1">
+    <img src="Images/ECC.png">
+  </div>
+
+  <div class="mySlides1">
+    <img src="Images/SparkSim.png">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<p>Slideshow 2:</p>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="Images/APDynamics.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="Images/CaProjWebsiteImgNew.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="Images/Fireflies.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+
+<p>Slideshow 3:</p>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="Images/Fireflies.jpg">
+  </div>
+
+  <div class="mySlides1">
+    <img src="Images/ECC.png">
+  </div>
+
+  <div class="mySlides1">
+    <img src="Images/SparkSim.png">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<p>Slideshow 4:</p>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="edyong.png" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="Images/CaProjWebsiteImgNew.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="Images/Fireflies.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+<div style="background-color:white; height: 300px"></div>
+
+<script src="/Scripts/MultipleSlideShow.js"></script>
+<div style="background-color:white; height: 300px"></div>
+<div class="main", id="classproj", style="  color:white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 45px;
+  background-color: #9cba6c;
+  border: 10px solid #333;
+  padding: 25px;
+  height: 200px">
+  Class Projects
+  <h3 style="font-size:24px;">Below are notable projects that I completed as part of my classwork where many were final projects</h3>
+</div>
+
+	
+</body>
+</html>

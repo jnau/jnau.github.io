@@ -6,11 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="Body&Headers.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/Scripts/SmoothScroll.js"></script>
-
-<script src="/Scripts/SlideShowInd.js"></script>
 <script src="/Scripts/Top.js"></script>
 <style>
+* {
+  box-sizing: border-box;
+}
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
@@ -61,35 +63,71 @@ padding: 25px;
 }
 
 .header h2{
-	font-size: 24px;
+  font-size: 24px;
+}
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
 }
 
-.sectionhighlight{
-  color:white;
-  font-weight: bold;
-  text-align: center;
-  font-size: 45px;
-  background-color: #9cba6c;
-  border: 10px solid #333;
-  padding: 25px;
-  height: 200px;
+h1 {
+  font-size: 50px;
+  word-break: break-all;
 }
 
-.sectionhighlight h3 {
-  font-size: 20px;
+.row {
+  margin: 10px -16px;
 
 }
-.responsive {
-  width: auto;
-  height: 300px;
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
 }
 
-#research {
-	height: 500px;
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
 }
 
-#classproj {
-	height: 500px;
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
 }
 
 /* Style the top navigation bar */
@@ -119,148 +157,48 @@ padding: 25px;
   color: black;
 }
 
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-/* Ensure proper sizing */
-
-/* Column container */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.NavContainer {
-  position: relative;
-  width: 100%;
-}
-
-.NavImage {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  height: 100%;
-  max-height: 500px;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  background-size: 100%;
-  position: relative;
-  text-align: center;
-  color:white;
-}
-.centered{
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0, 0.4); 
-  font-weight: bold; 
-  border: 10px solid white; 
-  font-size: 50px; 
-  color: white; 
-  padding: 20px
-
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-  max-height: 500px;
-  max-width: 500px;
-}
-
-* {box-sizing: border-box}
-.mySlides1, .mySlides2, .mySlides3 {display: none}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 750px;
-  max-height: 350px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
+.collapsible {
+  background-color: #777;
+  color: white;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
   color: white;
   font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  float: right;
+  margin-left: 5px;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.active:after {
+  content: "\2212";
 }
 
-/* On hover, add a grey background color */
-.prev:hover, .next:hover {
+.content-collapse {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
-  color: black;
-}
-.NavContainer:hover .centered {
-  opacity: 0;
-}
-
-.NavContainer:hover .NavImage {
-  opacity: 0.3;
-}
-
-.NavContainer:hover .middle {
-  opacity: 0.9;
-}
-
-.NavText {
-  background: #ffffff;
-  color: black;
-  font-size: 16px;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width:100%;
-  }
 }
 
 </style>
+
 </head>
 <body>
-		<div class="navbar">
+    <div class="navbar">
   <a href="index.html">Home</a>
   <a href="AboutMe.html">About Me</a>
   <a href="Experience.html">Experiences</a>
@@ -274,137 +212,113 @@ img {
 <h2>Below are some descriptions of my major projects and a link to their source code, if available.</h2>
 </div>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<div style="background-color:white; height: 250px"></div>
+
+<div style="background-color: white; height: 100px"></div>
+  <div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cardiology')"> Theoretical Cardiology </button>
+  <button class="btn" onclick="filterSelection('molecular')"> Theoretical Molecular Biology </button>
+  <button class="btn" onclick="filterSelection('class')"> Class </button>
+  <button class="btn" onclick="filterSelection('personal')"> Personal </button>
+  <button class="btn" onclick="filterSelection('C++')"> C++ </button>
+  <button class="btn" onclick="filterSelection('Python')"> Python </button>
+  <button class="btn" onclick="filterSelection('Matlab')"> Matlab </button>
+  <button class="btn" onclick="filterSelection('scripting')"> Scripting </button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
 <div class="row">
-  <div class="column">
-    <div class="NavContainer">
-    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
-    	 <div class="centered">Personal</div>
-    	</div>
-  	<div class="middle">
-   <!-- <div class="NavText"><b>Experiences</b></div> -->
-    <div class="NavText" align="justify">Under Construction</div>
-  	</div>
-	</div>
-  </div>
-  <div class="column">
-    <div class="NavContainer">
-    	<div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
-    	<div class="centered">Research</div>
-    	</div>
-  		<div class="middle">
-   <!-- <div class="NavText"><b>Experiences</b></div> -->
-    	<div class="NavText" align="justify"> These projects pertain to either my Theoretical Cardiology lab or my Topological Molecular Biology Lab.</div>
-    	<a href="#Research">Click here to read more about my research projects</a>
-  		</div>
-  	</div>
-  </div>
-  <div class="column">
-  	<div class="NavContainer">
-      <div style="background-color: #9cba6c; max-height: 300px; max-width: 300px">
-		    <div class="centered">Class</div>
+  <div class="column cardiology C++">
+    <div class="content">
+      <img src="/Images/APDynamics.jpg" alt="Mountains" style="width:100%; max-height: 400px;">
+      <button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
-        <div class="middle">
-   <!-- <div class="NavText"><b>Experiences</b></div> -->
-          <div class="NavText" align="justify"> These are any programs or projects I've written (some with a team or partner) for certain classes.</div>
-          <a href="#classproj">Click here to read more about my class projects</a>
-  		  </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
+    </div>
   </div>
+
+  <div class="column cardiology C++">
+    <div class="content">
+    <img src="/Images/CaProjWebsiteImgNew.jpg" alt="Lights" style="width:100%">
+ <button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column cardiology Python">
+    <div class="content">
+    <img src="/Images/Fireflies.jpg" alt="Nature" style="width:100%; max-height: 300px;">
+ <button class="collapsible">Description</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+            <button class="collapsible">Related Links</button>
+      <div class="content-collapse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column cars">
+    <div class="content">
+      <img src="/w3images/cars1.jpg" alt="Car" style="width:100%">
+      <h4>Retro</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column cars">
+    <div class="content">
+    <img src="/w3images/cars2.jpg" alt="Car" style="width:100%">
+      <h4>Fast</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column cars">
+    <div class="content">
+    <img src="/w3images/cars3.jpg" alt="Car" style="width:100%">
+      <h4>Classic</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column people">
+    <div class="content">
+      <img src="/w3images/people1.jpg" alt="Car" style="width:100%">
+      <h4>Girl</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column people">
+    <div class="content">
+    <img src="/w3images/people2.jpg" alt="Car" style="width:100%">
+      <h4>Man</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column people">
+    <div class="content">
+    <img src="/w3images/people3.jpg" alt="Car" style="width:100%">
+      <h4>Woman</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+<!-- END GRID -->
 </div>
 
-<div style="background-color:white; height: 300px"></div>
-<div class="main sectionhighlight", id="Research">
-Research Projects
-<h3>Below are some noteable projects I worked on and presented either at a conference or lab meeting</h3>
-</div>
-<p>Slideshow 1:</p>
-<div class="slideshow-container">
-  <div class="mySlides1">
-    <img src="Images/CaProjWebsiteImgNew.jpg">
-  </div>
+<script src="/Scripts/Portfolio.js"></script>
+<script src="/Scripts/collapse.js"></script>
+  
 
-  <div class="mySlides1">
-    <img src="Images/ECC.png">
-  </div>
-
-  <div class="mySlides1">
-    <img src="Images/SparkSim.png">
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-</div>
-
-<p>Slideshow 2:</p>
-<div class="slideshow-container">
-  <div class="mySlides2">
-    <img src="Images/APDynamics.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides2">
-    <img src="Images/CaProjWebsiteImgNew.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides2">
-    <img src="Images/Fireflies.jpg" style="width:100%">
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-</div>
-
-<p>Slideshow 3:</p>
-<div class="slideshow-container">
-  <div class="mySlides1">
-    <img src="Images/Fireflies.jpg">
-  </div>
-
-  <div class="mySlides1">
-    <img src="Images/ECC.png">
-  </div>
-
-  <div class="mySlides1">
-    <img src="Images/SparkSim.png">
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-</div>
-
-<p>Slideshow 4:</p>
-<div class="slideshow-container">
-  <div class="mySlides2">
-    <img src="edyong.png" style="width:100%">
-  </div>
-
-  <div class="mySlides2">
-    <img src="Images/CaProjWebsiteImgNew.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides2">
-    <img src="Images/Fireflies.jpg" style="width:100%">
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-</div>
-<div style="background-color:white; height: 300px"></div>
-
-<script src="/Scripts/MultipleSlideShow.js"></script>
-<div style="background-color:white; height: 300px"></div>
-<div class="main", id="classproj", style="  color:white;
-  font-weight: bold;
-  text-align: center;
-  font-size: 45px;
-  background-color: #9cba6c;
-  border: 10px solid #333;
-  padding: 25px;
-  height: 200px">
-  Class Projects
-  <h3 style="font-size:24px;">Below are notable projects that I completed as part of my classwork where many were final projects</h3>
-</div>
-
-	
 </body>
 </html>
