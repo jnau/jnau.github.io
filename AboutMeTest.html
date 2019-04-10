@@ -169,8 +169,8 @@ margin: 0 auto;
   <a href="OtherLinks.html" class="right">Other</a>
 </div>
 <div class="header">
-<h1>Projects</h1>
-<h2>Below are some descriptions of my major projects and a link to their source code, if available.</h2>
+<h1>About Me</h1>
+<h2>Click on the following to learn more.</h2>
 </div>
 
 <!-- The four columns -->
@@ -179,7 +179,13 @@ margin: 0 auto;
     <img src="Images/Intro.png" alt="My name is Jessica N. Au and I was born and raised in San Jose, California. I made this website in order to personalize the way others could discover more about me and my work. This is still a work in progress- hence the title of my webpage, 'Jess in Progress'. I don't know for sure what I would like to have on here yet, so I hope you come back to visit periodically for new updates." style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="Images/Education.png" alt="Snow" style="width:100%" onclick="myFunction(this);">
+    
+    <figure id="Fig1">
+    <img src="Images/Education.png" alt="Snow" style="width:100%" onclick="myFunction(Fig1);">
+    <figcaption>
+      Hello.
+    </figcaption>
+    </figure>
   </div>
   <div class="column">
     <img src="Images/Knowledge.png" alt="Mountains" style="width:100%" onclick="myFunction(this);">
@@ -196,11 +202,11 @@ margin: 0 auto;
 </div>
 
 <script>
-function myFunction(imgs) {
+function myFunction(Fig) {
   var expandImg = document.getElementById("expandedImg");
   var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
+  expandImg.src = Fig.img.src;
+  imgText.innerHTML = Fig.figcaption;
   expandImg.parentElement.style.display = "block";
 }
 </script>
