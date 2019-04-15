@@ -17,7 +17,23 @@ body {
   margin-bottom: 50px;
 }
 
+@font-face {
+    font-family: 'roboto_condensedregular';
+    src: url('robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('roboto-bold-webfont.woff2') format('woff2'),
+         url('roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 @font-face {
     font-family: 'oswald_regularregular';
@@ -110,12 +126,14 @@ background-color: rgba(0,0,0, 0.4);
 }
 
 .p_welcome {
+  font-family: 'roboto_condensedregular';
 	color: black;
 	padding: 80px;
 	text-align: center;
 }
 
 .p_welcome h2 {
+  font-family: 'robotobold';
 	font-size: 35px;
 	font-weight: bold;
 
@@ -268,7 +286,7 @@ img {
 
   <div class="main">
   	
-  	<div class="p_welcome" style="font-family: 'oswald_regularregular'">
+  	<div class="p_welcome" >
 		<h2>Welcome to my webpage!</h2>
     <p align="justify">My name is Jessica and I'm an aspiring software engineer and researcher. I am currently a Life Science Research Technician at Stanford Medicine helping to study key genes, chromosome regions, and mutations that control evolutionary traits in vertebrates. </p>
 
