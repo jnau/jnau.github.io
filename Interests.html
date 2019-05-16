@@ -93,13 +93,16 @@ padding: 25px;
 }
 
 .row {
+  display: -ms-flexbox; /* IE10 */
   display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
+  -ms-flex: 25%; /* IE10 */
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
@@ -113,6 +116,7 @@ padding: 25px;
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
+    -ms-flex: 50%;
     flex: 50%;
     max-width: 50%;
   }
@@ -121,6 +125,7 @@ padding: 25px;
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
+    -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
   }
@@ -164,10 +169,10 @@ padding: 25px;
   </div> 
   <div class="column">
     <img src="InterestsImages/IMG_1865.JPG">
-    <img src="InterestsImages/IMG_2448.JPG">
-    <img src="InterestsImages/">
-    <img src="InterestsImages/">
-    <img src="InterestsImages/">
+    <img src="InterestsImages/IMG_20180507_143242.JPG">
+    <img src="InterestsImages/68E23813-6063-46F7-9D66-AC2717798C41.jpeg">
+    <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg">
+    <img src="InterestsImages/IMG_20171224_205544.JPG">
     <img src="InterestsImages/">
     <img src="InterestsImages/">
   </div>
