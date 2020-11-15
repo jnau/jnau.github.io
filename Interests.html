@@ -218,8 +218,8 @@ figcaption {
 .container {
   position: relative;
   border-radius: 25px;
-  width: 100%;
-  max-width: 270px;
+  width: 250px;
+  height: 300px;
 }
 
 .image {
@@ -292,21 +292,25 @@ figcaption {
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('Gardening')"> Gardening </button>
   <button class="btn" onclick="filterSelection('Pets')"> Pets </button>
-  <button class="btn" onclick="filterSelection('ArtsCrafts')"> Arts & Crafts </button>
+  <button class="btn" onclick="filterSelection('Arts')"> Arts & Crafts </button>
   <button class="btn" onclick="filterSelection('Travel')"> Travel </button>
   <button class="btn" onclick="filterSelection('Other')"> Other </button>
 </div>
-
+<div style="background-color: white; height: 50px"></div>
 <div class="row"> 
-  <div class="column">
-    <div class="container Other">
+  <div class="column Other">
+    <div class="container">
       <img src="InterestsImages/68E23813-6063-46F7-9D66-AC2717798C41.jpeg" style="width: 250px; height:300px">
       <div class="overlay">Strawberry ice cream cupcakes</div>
     </div>
-    <div class="container ArtsCrafts">
+  </div>
+  <div class="column Arts">
+    <div class="container">
       <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg" style="width: 250px; height:300px">
       <div class="overlay">Sketch: Mouse hunt's Dojo Sensei</div>
     </div>
+  </div>
+  <!--
     <img src="InterestsImages/IMG_0498.JPG" style="max-width:100%;">
     <img src="InterestsImages/IMG_0587.JPG" style="max-width:100%;">
     <img src="InterestsImages/IMG_1865.JPG" style="max-width:100%;">
@@ -314,7 +318,7 @@ figcaption {
     <video width= "100%" controls muted loop><source src="InterestsImages/sstg-58DEA3BD-0DAA-405C-A026-8F1DBFADF44A.mp4" type="video/mp4">Your browser does not support the video tag.</video>
     <img src="Images/IMG_0428.JPG" style="max-width: 100%; ">
   </div>
-	
+	-->
   <div class="column">
     <img src="InterestsImages/IMG_9129.JPG" style="max-width:100%;">
     <img src="InterestsImages/IMG_1528.JPG" style="max-width: 100%; ">
