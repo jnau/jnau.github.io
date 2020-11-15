@@ -141,7 +141,7 @@ body {
 /* Add padding BETWEEN each column */
 .row,
 .row > .column {
-  padding: 8px;
+  padding: 4px;
 }
 
 /* Create 4 equal columns that floats next to each other */
@@ -199,6 +199,26 @@ body {
   color: white;
 }
 
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.content:hover .overlay {
+  opacity: 1;
+}
+
 </style>
 </head>
 
@@ -233,6 +253,7 @@ body {
     <div class="column Other">
       <div class="content">
         <img src="1.jpg" alt="Mountains" style="width:100%">
+        <div class="overlay">Strawberry ice cream cupcakes</div>
       </div>
     </div>
     <div class="column Plant">
