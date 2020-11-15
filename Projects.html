@@ -23,7 +23,6 @@
 
 body {
   font-family: 'robotoregular', Arial, Helvetica, sans-serif;
-  padding: 10px;
   height: 100%;
   margin-left: 100px;
   margin-right: 100px;
@@ -218,18 +217,20 @@ h1 {
 
 </head>
 <body>
-    <div class="navbar">
+<div class="navbar" style="max-width: 1080px; margin: auto;">
   <a href="index.html">Home</a>
   <a href="AboutMe.html">About Me</a>
   <a href="Experience.html">Experiences</a>
   <a href="Skills.html">Skills</a>
   <a href="Projects.html">Projects</a>
   <a href="Interests.html">Interests</a>
-  <a href="OtherLinks.html" class="right">Other</a>
+  <a href="/Files/Jnau_CV.pdf" class="right" download>CV</a>
 </div>
-<div class="header" style="min-height: 350px;"></div>
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
+<div class="header" style="min-height: 350px; max-width: 1080px; margin: auto;"></div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div style="max-width: 1080px; margin: auto">
 <div style="background-color: white; height: 50px"></div>
   <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
@@ -565,8 +566,9 @@ dimensions using Verlet's algorithm. </p>
 <script src="/Scripts/collapse.js"></script>
   
 <div style="background-color: white; height: 50px;">
-<div class="footer">
+  </div>
+<!--<div class="footer">
   Thanks to <a href="https://www.w3schools.com/">w3schools</a> for helpful tutorials on website making with HTML, CSS, and Javascript like this project portfolio! Also, <b>NONE</b> of these fonts are mine, they are found on <a href="https://www.dafont.com/">dafont</a> and I do not own them.
-</div>
+</div>-->
 </body>
 </html>
