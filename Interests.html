@@ -215,6 +215,36 @@ figcaption {
   padding: 2px;
   text-align: center;
 }
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
 </style>
 </head>
 
@@ -236,10 +266,11 @@ figcaption {
 <div style="max-width: 1080px; margin: auto">
 <div class="row"> 
   <div class="column">
-    <figure>
-      <img src="InterestsImages/68E23813-6063-46F7-9D66-AC2717798C41.jpeg" style="max-width:100%; max-height: 270px">
-      <figcaption> Strawberry and vanilla ice cream cupcakes </figcaption>
-    </figure>
+    <div class="container">
+      <img src="InterestsImages/68E23813-6063-46F7-9D66-AC2717798C41.jpeg" style="max-width:100%;">
+      <div class="overlay">Strawberry ice cream cupcakes</div>
+    </div>
+    
     <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg" style="max-width:100%;">
     <img src="InterestsImages/IMG_0498.JPG" style="max-width:100%;">
     <img src="InterestsImages/IMG_0587.JPG" style="max-width:100%;">
