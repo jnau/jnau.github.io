@@ -4,6 +4,7 @@
 <title> Welcome </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/Scripts/Top.js"></script>
 <style>
@@ -52,15 +53,14 @@ body {
   margin-bottom: 50px;
 }
 
-
 .header {
-padding: 25px;
+  padding: 25px;
   text-align: center;
   /*background: #9cba6c;*/
   background-image: url('Images/DSC_0399Edit.jpg');
   background-position: center;
   background-size: cover;
-background-color: rgba(0,0,0, 0.4); 
+  background-color: rgba(0,0,0, 0.4); 
   border-right: 10px solid #333; 
   border-left: 10px solid #333;
   border-bottom: 10px solid #333;
@@ -146,20 +146,9 @@ background-color: rgba(0,0,0, 0.4);
 
 /* Create 4 equal columns that floats next to each other */
 .column {
-  position: relative;
   float: left;
   width: 33.33%;
   display: none; /* Hide all elements by default */
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
-.column video{
-  margin-top: 8px;
-  vertical-align: middle;
 }
 
 /* Clear floats after rows */ 
@@ -213,41 +202,44 @@ background-color: rgba(0,0,0, 0.4);
 </div>
 
 <div class="header" style="min-height: 350px; max-width: 1080px; margin: auto;"></div>
+
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 <div style="background-color: white; height: 50px"></div>
+
 <div style="max-width: 1080px; margin: auto">
   <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('Plant')"> Gardening</button>
-  <button class="btn" onclick="filterSelection('Art')"> Arts & Crafts</button>
-  <button class="btn" onclick="filterSelection('Travel')"> Travel</button>
-  <button class="btn" onclick="filterSelection('Pets')"> Pets</button>
-  <button class="btn" onclick="filterSelection('Other')"> Other</button>
-</div>
-<div style="background-color: white; height: 50px"></div>
-<div class="row">
-  <div class="column Other">
-    <div class="content">
-      <img src="1.jpg" alt="Mountains" style="width:100%">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('Plant')"> Gardening</button>
+    <button class="btn" onclick="filterSelection('Art')"> Arts & Crafts</button>
+    <button class="btn" onclick="filterSelection('Travel')"> Travel</button>
+    <button class="btn" onclick="filterSelection('Pets')"> Pets</button>
+    <button class="btn" onclick="filterSelection('Other')"> Other</button>
+  </div>
+  <div style="background-color: white; height: 50px"></div>
+  <div class="row">
+    <div class="column Other">
+      <div class="content">
+        <img src="1.jpg" alt="Mountains" style="width:100%">
+      </div>
+    </div>
+    <div class="column Plant">
+      <div class="content">
+      <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg" alt="Lights" style="width:100%">
+      </div>
+    </div>
+    <div class="column Art">
+      <div class="content">
+      <img src="InterestsImages/IMG_0498.JPG" alt="Nature" style="width:100%">
+      </div>
+    </div>
+    <div class="column Pets">
+      <div class="content">
+        <img src="InterestsImages/IMG_0587.JPG" alt="Car" style="width:100%">
+      </div>
     </div>
   </div>
-  <div class="column Plant">
-    <div class="content">
-    <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg" alt="Lights" style="width:100%">
-    </div>
-  </div>
-  <div class="column Art">
-    <div class="content">
-    <img src="InterestsImages/IMG_0498.JPG" alt="Nature" style="width:100%">
-    </div>
-  </div>
-  <div class="column Pets">
-    <div class="content">
-      <img src="InterestsImages/IMG_0587.JPG" alt="Car" style="width:100%">
-    </div>
-  </div>
-</div>
-<!-- END GRID -->
+  <!-- END GRID -->
 </div>
 </body>
 </html>
