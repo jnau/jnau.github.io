@@ -4,6 +4,7 @@
 <title> Welcome </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/Scripts/Top.js"></script>
 <script src="/Scripts/Portfolio.js"></script>
@@ -53,15 +54,14 @@ body {
   margin-bottom: 50px;
 }
 
-
 .header {
-padding: 25px;
+  padding: 25px;
   text-align: center;
   /*background: #9cba6c;*/
   background-image: url('Images/DSC_0399Edit.jpg');
   background-position: center;
   background-size: cover;
-background-color: rgba(0,0,0, 0.4); 
+  background-color: rgba(0,0,0, 0.4); 
   border-right: 10px solid #333; 
   border-left: 10px solid #333;
   border-bottom: 10px solid #333;
@@ -134,32 +134,28 @@ background-color: rgba(0,0,0, 0.4);
   box-sizing: border-box;
 }
 
+/* Filter!*/
 .row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
+  margin: 10px -16px;
 }
 
-/* Create four equal columns that sits next to each other */
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 4px;
+}
+
+/* Create 4 equal columns that floats next to each other */
 .column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
   float: left;
-}
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+  width: 25%;
+  display: none; /* Hide all elements by default */
 }
 
 .column img {
   margin-top: 8px;
   vertical-align: middle;
+  border-radius: 25px;
   width: 260px;
   height: 300px;
 }
@@ -167,57 +163,46 @@ background-color: rgba(0,0,0, 0.4);
 .column video{
   margin-top: 8px;
   vertical-align: middle;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-#rcorners1 {
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px; 
-  width: 200px;
-  height: 150px;  
-}
-
-figure {
-  border: 1px #cccccc solid;
-  border-radius: 25px 25px 5px 5px;
-  padding: 10px;
-  margin: auto;
-}
-
-img {
   border-radius: 25px;
 }
 
-video {
-  border-radius: 25px;
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-figcaption {
+/* Content */
+.content {
   background-color: white;
-  border-radius: 5px;
-  color: black;
-  font-style: normal;
-  padding: 2px;
-  text-align: center;
+  padding: 10px;
 }
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
 .container {
   position: relative;
   border-radius: 25px;
@@ -250,34 +235,6 @@ figcaption {
   opacity: 1;
 }
 
-/* Content */
-.content {
-  background-color: white;
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: white;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
-}
-
 </style>
 </head>
 
@@ -293,80 +250,55 @@ figcaption {
 </div>
 
 <div class="header" style="min-height: 350px; max-width: 1080px; margin: auto;"></div>
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<div style="max-width: 1080px; margin: auto">
-<div style="background-color: white; height: 50px"></div>
-  <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('Gardening')"> Gardening </button>
-  <button class="btn" onclick="filterSelection('Pets')"> Pets </button>
-  <button class="btn" onclick="filterSelection('Arts')"> Arts & Crafts </button>
-  <button class="btn" onclick="filterSelection('Travel')"> Travel </button>
-  <button class="btn" onclick="filterSelection('Other')"> Other </button>
-</div>
-<div style="background-color: white; height: 50px"></div>
-  <div class="row"> 
-    <div class="column Other">
-      <div class="content">
-        <div class="container">
-          <img src="InterestsImages/68E23813-6063-46F7-9D66-AC2717798C41.jpeg">
-          <div class="overlay">Strawberry ice cream cupcakes</div>
-        </div>
-      </div>
-    </div>
-    <div class="column Arts Other">
-      <div class="content">
-      <div class="container">
-        <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg">
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-  <!--
-    <img src="InterestsImages/IMG_0498.JPG" style="max-width:100%;">
-    <img src="InterestsImages/IMG_0587.JPG" style="max-width:100%;">
-    <img src="InterestsImages/IMG_1865.JPG" style="max-width:100%;">
-    <video width= "100%" controls muted loop><source src="InterestsImages/ips-11D077FC-C7C3-42A6-BEEF-F358AA3E5E97.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    <video width= "100%" controls muted loop><source src="InterestsImages/sstg-58DEA3BD-0DAA-405C-A026-8F1DBFADF44A.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    <img src="Images/IMG_0428.JPG" style="max-width: 100%; ">
-  </div>
-	-->
 
-  <!--
-  <div class="column">
-    <img src="InterestsImages/IMG_9129.JPG" style="max-width:100%;">
-    <img src="InterestsImages/IMG_1528.JPG" style="max-width: 100%; ">
-    <img src="InterestsImages/IMG_1718.JPG" style="max-width: 100%; ">
-    <video width= "100%" controls muted loop><source src="InterestsImages/ipv-25F67419-3794-4F7D-87DB-AA4CBCBE2423.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    <img src="InterestsImages/IMG_4977.JPG" style="width:250px;height:350px;">
-    <img src="InterestsImages/IMG_8987.JPG" style="max-width: 100%; ">
-    <img src="InterestsImages/IMG_20180605_173409.JPG" style="max-width: 100%; ">
-    <img src="Images/IMG_0763.JPG" style="max-width: 100%; ">
-  </div> 
-	
-  <div class="column">
-    <img src="InterestsImages/IMG_2667.JPG" style="max-width:100%;">
-    <video  width= "100%" controls muted loop><source src="InterestsImages/ipv-0268F632-E7E5-4DFA-95EE-97FCE79605D8.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    <img src="InterestsImages/IMG_2743.JPG" style="max-width:100%;">
-    <img src="InterestsImages/IMG_6165.JPG" style="max-width:100%;">
-    <img src="InterestsImages/IMG_5883.JPG" style="max-width:100%;">
-    <img src="InterestsImages/IMG_4992.JPG" style="max-width:100%;">
-    <video width= "100%" controls muted loop><source src="InterestsImages/ips-B3D90CCD-0F7A-4B8C-807C-7A43EE51D476.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-  <img src="Images/IMG_6711.JPG" style="max-width:100%;">
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div style="background-color: white; height: 50px"></div>
+
+<div style="max-width: 1080px; margin: auto">
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('plant')"> Gardening</button>
+    <button class="btn" onclick="filterSelection('art')"> Arts & Crafts</button>
+    <button class="btn" onclick="filterSelection('travel')"> Travel</button>
+    <button class="btn" onclick="filterSelection('pet')"> Pets</button>
+    <button class="btn" onclick="filterSelection('other')"> Other</button>
   </div>
-	
-  <div class="column">
-    <img src="InterestsImages/IMG_4161.JPG" style="max-width:100%;">
-    <video width= "100%" controls muted loop><source src="InterestsImages/sstg-F53B0D96-D4EE-4605-AAF9-8FA1C2660B5B.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-    <img src="InterestsImages/IMG_20171224_205544.JPG" style=" max-width: 100%; ">
-    <img src="InterestsImages/IMG_20180507_143242.JPG" style=" max-width: 100%; ">
-    <video width= "100%" controls muted loop><source src="InterestsImages/ips-443DCAFA-FA59-4C6B-A4E5-FA7874C294AB.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-      <img src="InterestsImages/IMG_6575.JPG" style=" max-width: 100%; ">
-      <img src="InterestsImages/IMG_0190.JPG" style=" max-width: 100%; ">
-    <img src="InterestsImages/RaspberryFrostBlooms.jpg" style=" max-width: 100%; ">
+  <div style="background-color: white; height: 50px"></div>
+  <div class="row">
+    <div class="column art">
+        <div class="container">
+          <img src="InterestsImages/DojoSensei.jpeg" alt="Mouse Hunt Dojo Sensei" style="width:100%">
+          <div class="overlay">Sketch: Mouse hunt's Dojo-sensei</div>
+        </div>
+    </div>
+    <div class="column art">
+        <div class="container">
+          <img src="InterestsImages/Squirtle.JPG" alt="Pokemon Squirtle Crochet" style="width:100%">
+          <div class="overlay">Crochet: Squirtle</div>
+      </div>
+    </div>
+    <div class="column art">
+      <div class="content">
+      <img src="InterestsImages/BearBlanket.JPG" alt="Crochet Bear Baby Blanket" style="width:100%">
+      <div class="overlay">Crochet: Bear Baby Blanket</div>
+      </div>
+    </div>
+    <div class="column plant">
+      <div class="content">
+        <img src="InterestsImages/RaspberryFrostBlooms.jpg" alt="Raspberry Frost Iris" style="width:100%">
+        <div class="overlay">Plant: Tall Bearded Iris- Raspberry Frost </div>
+      </div>
+    </div>
   </div>
-	-->
+      <div class="column pet">
+      <div class="content">
+        <video width= "100%" controls muted loop><source src="InterestsImages/SparkyPeek.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      </div>
+    </div>
+  </div>
+  <!-- END GRID -->
+</div>
 
 </body>
 </html>
