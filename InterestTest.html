@@ -215,7 +215,12 @@ body {
   border-radius: 25px;
 }
 
-.column img:hover .overlay {
+.container {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+}
+.container:hover .overlay {
   opacity: 1;
 }
 
@@ -252,8 +257,10 @@ body {
   <div class="row">
     <div class="column Other">
       <div class="content">
+        <div class="container">
         <img src="1.jpg" alt="Mountains" style="width:100%">
         <div class="overlay">Strawberry ice cream cupcakes</div>
+      </div>
       </div>
     </div>
     <div class="column Plant">
