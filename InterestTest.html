@@ -197,7 +197,20 @@ body {
 .btn.active {
   background-color: #666;
   color: white;
+}
 
+
+.container {
+  position: relative;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .overlay {
   position: absolute; 
@@ -210,25 +223,11 @@ body {
   opacity:0;
   color: white;
   font-size: 15px;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 4px 4px 25px 25px;
 }
 
-.container {
-  position: relative;
-  width: 50%;
-  max-width: 300px;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 8px;
-  vertical-align: middle;
-  border-radius: 25px;
-}
 .container:hover .overlay {
   opacity: 1;
 }
@@ -265,19 +264,15 @@ body {
   <div style="background-color: white; height: 50px"></div>
   <div class="row">
     <div class="column Other">
-      <div class="content">
         <div class="container">
           <img src="1.jpg" alt="Mountains" style="width:100%">
           <div class="overlay">Strawberry ice cream cupcakes</div>
         </div>
-      </div>
     </div>
     <div class="column Plant">
-      <div class="content">
         <div class="container">
           <img src="InterestsImages/5B83737F-2BF9-4188-8105-2063C45894A8.jpeg" alt="Mountains" style="width:100%">
           <div class="overlay">Dojo-sensei</div>
-        </div>
       </div>
     </div>
     <div class="column Art">
