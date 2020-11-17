@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title> Welcome to my webpage! </title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/Scripts/Top.js"></script>
 <style>
 @font-face {
     font-family: 'robotoregular';
@@ -9,7 +13,6 @@
          url('Fonts/roboto-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -401,7 +404,7 @@ img {vertical-align: middle;}
       <p align="justify" style="font-size: 18px;">Please scroll down or click on the different tabs of my navigation bar to learn more about the different aspects of my professional and personal life. All images used on this website are mine or was used with permission from people I know. 
       </p>
 
-      <i><p>Last edit: 4/6/2019 </p></i>
+      <i><p>Last edit: 11/17/20 </p></i>
      </div>
    </div>
   </div>
@@ -454,24 +457,24 @@ img {vertical-align: middle;}
   <div class="centered">Projects</div>
     </center>
     <div class="middle">
-      <div class="NavText" align="justify">You can find more about my personal and professional projects on this page. They are sorted by topics, for example, <i>Research, Personal, & Class Projects</i>, as well as by <i>Programming Language</i>. If you are looking for existing source code, there will be corresponding links on each specific project, if it is available. </div>
+      <div class="NavText" align="justify">You can find more about my personal and professional projects on this page. If you are looking for existing source code, there will be corresponding links on each specific project, if it is available. </div>
       <a href="Projects.html" class="NavText" >Click here to learn more about my projects!</a>
     </div>
   </div>
 </div>
-
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
 </div>
 <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>  
+  </div>
+</div>
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-</div>
+<div style="background-color: white; height: 100px"></div>
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
